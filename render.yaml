@@ -1,0 +1,10 @@
+
+services:
+  - type: web
+    name: bachatvikas
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: bash start.sh
+    envVars:
+      - key: NEWS_API_KEY
+        sync: false
