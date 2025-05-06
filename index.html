@@ -21,7 +21,7 @@
       background: #e0f2f7;
       padding: 1.5rem 2rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start; /* Aligns logo to the left */
       align-items: center;
     }
     .logo {
@@ -94,7 +94,9 @@
 </head>
 <body>
   <header>
-    <div class="logo">Bachat<span style="color:#1a202c">Vikas</span></div>
+    <div class="logo">
+      <img src="logo.png" alt="BachatVikas Logo" width="150" height="auto">
+    </div>
     <nav>
       <a href="#">Home</a>
       <a href="#">About</a>
