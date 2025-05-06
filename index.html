@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BachatVikas - Financial Growth</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,101 +13,88 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #fdfdfd;
-      color: #004832;
+      background-color: #e0f2f7;
+      color: #1a202c;
       line-height: 1.6;
     }
     header {
-      background: #d0e8f2;
+      background: #e0f2f7;
       padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .logo {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      color: #006b4e;
-    }
-    .logo span {
-      color: #1a202c;
+      color: #006b4e; /* Dark emerald green */
     }
     nav a {
       margin-left: 1.5rem;
       text-decoration: none;
-      color: #1a202c;
+      color: #333;
       font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #f97316;
     }
     .hero {
       text-align: center;
       padding: 4rem 2rem;
-      background-color: #d0e8f2;
+      background-color: #b5d9e7;
     }
     .hero h1 {
       font-size: 2.5rem;
-      font-weight: 700;
       color: #1a202c;
     }
     .hero p {
       margin: 1rem 0;
-      font-size: 1.15rem;
-      color: #2a4a3a;
+      font-size: 1.1rem;
+      color: #333;
     }
     .btn {
-      background-color: #f97316;
+      background-color: #f97316; /* Rust orange */
       color: #fff;
       padding: 0.75rem 1.5rem;
       border: none;
       border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .btn:hover {
-      background-color: #ea580c;
     }
     .services {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 3rem 1rem;
-      background: #fdfdfd;
+      background: #f8fafc;
     }
     .card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
+      background: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
       margin: 1rem;
       padding: 1.5rem;
       max-width: 300px;
       flex: 1 1 250px;
       text-align: center;
-      transition: transform 0.2s ease;
     }
-    .card:hover {
-      transform: translateY(-5px);
+    .card i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
     .card h3 {
-      color: #006b4e;
+      color: #1a202c;
       margin-bottom: 0.5rem;
     }
     .footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: #d0e8f2;
+      background: #b5d9e7;
       font-size: 0.9rem;
-      color: #1a202c;
+      color: #333;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Bachat<span>Vikas</span></div>
+    <div class="logo">Bachat<span style="color:#1a202c">Vikas</span></div>
     <nav>
       <a href="#">Home</a>
       <a href="#">About</a>
@@ -116,7 +103,7 @@
     </nav>
   </header>
 
-  <section #c8efe3="hero">
+  <section class="hero">
     <h1>Empowering Rural India with Financial Education</h1>
     <p>BachatVikas — जहाँ बचत हो, वहाँ विकास हो!</p>
     <button class="btn">Get Started</button>
@@ -137,7 +124,7 @@
     </div>
   </section>
 
-  <footer #c8efe3="footer">
+  <footer class="footer">
     © 2025 BachatVikas
   </footer>
 </body>
