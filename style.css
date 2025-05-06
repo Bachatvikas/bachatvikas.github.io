@@ -1,40 +1,33 @@
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f4e7;
+    color: #222;
     margin: 0;
-    background-color: #fefefe;
-    color: #333;
+    padding: 0;
 }
-
 header {
-    background-color: #f9a825; /* gold-yellow */
-    color: white;
+    background-color: #2b6777;
+    color: #fff;
+    padding: 20px;
     text-align: center;
-    padding: 2rem 1rem;
-    border-bottom: 5px solid #00796b; /* teal green accent */
 }
-
 main {
-    padding: 2rem;
+    padding: 40px;
     text-align: center;
 }
-
-.intro h2 {
-    color: #00796b; /* astrologically favorable green-blue */
-}
-
-.cta {
-    background-color: #f57c00; /* bold orange CTA */
-    color: white;
-    padding: 0.8rem 1.5rem;
+a {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #fcbf49;
+    color: #000;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
 }
-
 footer {
-    background-color: #00796b;
-    color: white;
+    background-color: #2b6777;
+    color: #fff;
     text-align: center;
-    padding: 1rem;
+    padding: 10px;
 }
