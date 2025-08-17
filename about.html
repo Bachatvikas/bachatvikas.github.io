@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About BachatVikas | Smart savings. Secure future.</title>
-  <meta name="description" content="BachatVikas helps families make smarter financial decisions through financial literacy, mutual fund distribution, and insurance services—focused on Tier 2/3 India." />
+  <meta name="description" content="BachatVikas helps families make smarter financial decisions through financial literacy, mutual fund distribution, and insurance services—focused on first-time investors and households." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
@@ -24,8 +24,9 @@
       --bg: #f7fafc;
       --text: #1a202c;
       --muted: #4a5568;
-      --brand: #1e88e5;
-      --accent: #f7b500;
+      --brand: #1e88e5; /* primary blue */
+      --accent: #f7b500; /* brand gold */
+      --brand-green: #2e7d32; /* optional brand green */
       --card: #ffffff;
       --radius: 16px;
     }
@@ -45,7 +46,7 @@
     header { padding: 40px 0 10px; }
     .breadcrumbs { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
     h1 { font-size: 40px; margin: 8px 0; letter-spacing: -0.02em; }
-    .tagline { font-size: 18px; color: var(--muted); margin-bottom: 28px; }
+    .tagline { font-size: 18px; color: var(--accent); font-weight:600; margin-bottom: 28px; }
     .card { background: var(--card); border-radius: var(--radius); padding: 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
     .grid { display: grid; gap: 20px; }
     @media (min-width: 900px) { .grid-2 { grid-template-columns: 1.2fr 0.8fr; } .grid-3 { grid-template-columns: repeat(3, 1fr); } }
@@ -56,8 +57,8 @@
     ul { padding-left: 18px; margin: 0; }
     .pill { display:inline-block; padding:6px 12px; border-radius:999px; background:#e3f2fd; color:#0d47a1; font-size:12px; font-weight:600; letter-spacing:.02em; margin-bottom:6px; }
     .cta { margin-top: 22px; display:inline-block; padding:12px 18px; background:var(--brand); color:#fff; border-radius:12px; font-weight:600; }
-    footer { margin: 40px 0 20px; font-size: 13px; color: var(--muted); }
     .muted { color: var(--muted); }
+    .brand-text { color: var(--accent); font-weight:600; }
   </style>
 
   <!-- Schema -->
@@ -97,12 +98,12 @@
         <h2>Who we are</h2>
         <p>
           BachatVikas is a mission-driven financial platform helping individuals and families make smarter money decisions.
-          We believe <em>“जहाँ बचत हो, वहाँ विकास हो”</em> — <small>“Where there’s saving, there’s growth.”</small>
+          We believe <em>“Where there’s saving, there’s growth.”</em>
         </p>
 
         <h2>Our Mission</h2>
         <p>
-          To bridge the financial literacy gap across Tier 2 and Tier 3 India by making investments, insurance, and long-term planning simple, transparent, and accessible for everyone.
+          To bridge the financial literacy gap across India by making investments, insurance, and long-term planning simple, transparent, and accessible for everyone.
         </p>
 
         <div class="grid grid-3">
@@ -140,7 +141,7 @@
           <li><strong>Simple & transparent:</strong> Clear recommendations, no jargon.</li>
           <li><strong>Goal-first planning:</strong> Child education, home, retirement, protection.</li>
           <li><strong>Local focus:</strong> Designed for emerging India.</li>
-          <li><strong>SEBI-registered Mutual Fund Distributor (ARN holder):</strong> Credible investment support.</li>
+          <li><strong class="brand-text">SEBI Registered Mutual Fund Distributor:</strong> Credible financial advisory services.</li>
         </ul>
 
         <a href="/contact" class="cta">Talk to an advisor</a>
@@ -150,14 +151,14 @@
         <h2>Fast Facts</h2>
         <ul>
           <li><strong>Brand:</strong> BachatVikas</li>
-          <li><strong>Tagline:</strong> Smart savings, secure future – your partner in investments and insurance.</li>
-          <li><strong>Focus:</strong> Empowering individuals and families with expert financial guidance for long-term growth.</li>
+          <li><strong>Tagline:</strong> Smart savings. Secure future.</li>
+          <li><strong>Focus:</strong> <span class="brand-text">Empowering individuals and families with expert financial guidance for long-term growth.</span></li>
         </ul>
 
         <h2>Contact</h2>
         <p>
-          Email: <a href="mailto:info@bachatvikas.in"></a><br />
-          Phone: <a href="Phone:+91-9423420729"></a><br />
+          Email: <a href="mailto:info@bachatvikas.in">info@bachatvikas.in</a><br />
+          Phone: <a href="tel:+91-9423420729">+91-9423420729</a><br />
         </p>
 
         <h2>Social</h2>
@@ -167,7 +168,7 @@
         </p>
 
         <p class="muted" style="margin-top:14px; font-size:12px;">
-          Disclaimer: Investments are subject to market risks. Please read all scheme-related documents carefully before investing. BachatVikas is a SEBI-registered Mutual Fund Distributor (ARN holder).
+          Disclaimer: Investments are subject to market risks. Please read all scheme-related documents carefully before investing. BachatVikas is a SEBI registered mutual fund distributor.
         </p>
       </aside>
     </section>
