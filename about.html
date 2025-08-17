@@ -1,25 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - BachatVikas</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About BachatVikas | Smart savings. Secure future.</title>
+  <meta name="description" content="BachatVikas helps families make smarter financial decisions through financial literacy, mutual fund distribution, and insurance services—focused on Tier 2/3 India." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About BachatVikas" />
+  <meta property="og:description" content="Smart savings. Secure future. Financial literacy, investments, and insurance—made simple and accessible." />
+  <meta property="og:url" content="https://bachatvikas.in/about" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://bachatvikas.in/logo.png" />
+
+  <!-- CSS -->
+  <style>
+    :root {
+      --bg: #f7fafc;
+      --text: #1a202c;
+      --muted: #4a5568;
+      --brand: #1e88e5;
+      --accent: #f7b500;
+      --card: #ffffff;
+      --radius: 16px;
+    }
+
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    header { padding: 40px 0 10px; }
+    .breadcrumbs { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
+    h1 { font-size: 40px; margin: 8px 0; letter-spacing: -0.02em; }
+    .tagline { font-size: 18px; color: var(--muted); margin-bottom: 28px; }
+    .card { background: var(--card); border-radius: var(--radius); padding: 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .grid { display: grid; gap: 20px; }
+    @media (min-width: 900px) { .grid-2 { grid-template-columns: 1.2fr 0.8fr; } .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 900px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+    h2 { font-size: 24px; margin: 0 0 12px; }
+    h3 { font-size: 18px; margin: 0 0 8px; }
+    ul { padding-left: 18px; margin: 0; }
+    .pill { display:inline-block; padding:6px 12px; border-radius:999px; background:#e3f2fd; color:#0d47a1; font-size:12px; font-weight:600; letter-spacing:.02em; margin-bottom:6px; }
+    .cta { margin-top: 22px; display:inline-block; padding:12px 18px; background:var(--brand); color:#fff; border-radius:12px; font-weight:600; }
+    footer { margin: 40px 0 20px; font-size: 13px; color: var(--muted); }
+    .muted { color: var(--muted); }
+  </style>
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BachatVikas",
+    "url": "https://bachatvikas.in",
+    "logo": "https://bachatvikas.in/logo.png",
+    "sameAs": [
+      "https://instagram.com/bachatvikas",
+      "https://facebook.com/bachatvikas"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "Customer Support",
+      "email": "info@bachatvikas.in",
+      "telephone": "+91-9423420729",
+      "areaServed": "IN"
+    }]
+  }
+  </script>
 </head>
 <body>
-  <header>
-    <div class="logo">Bachat<span>Vikas</span></div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-  <main class="content">
-    <h2>About Us</h2>
-    <p>BachatVikas is a mission-driven platform focused on building financial literacy in rural India.</p>
-  </main>
-  <footer class="footer">© 2025 BachatVikas</footer>
+  <div class="container">
+    <header>
+      <nav class="breadcrumbs">
+        <a href="/" class="muted">Home</a> · <span>About</span>
+      </nav>
+      <h1>About BachatVikas</h1>
+      <div class="tagline">Smart savings. Secure future.</div>
+    </header>
+
+    <section class="grid grid-2">
+      <article class="card">
+        <h2>Who we are</h2>
+        <p>
+          BachatVikas is a mission-driven financial platform helping individuals and families make smarter money decisions.
+          We believe <em>“जहाँ बचत हो, वहाँ विकास हो”</em> — <small>“Where there’s saving, there’s growth.”</small>
+        </p>
+
+        <h2>Our Mission</h2>
+        <p>
+          To bridge the financial literacy gap across Tier 2 and Tier 3 India by making investments, insurance, and long-term planning simple, transparent, and accessible for everyone.
+        </p>
+
+        <div class="grid grid-3">
+          <div class="card" style="padding:16px;">
+            <div class="pill">Our Services</div>
+            <h3>Mutual Fund Distribution</h3>
+            <ul>
+              <li>SIPs and lumpsum investments aligned to your goals</li>
+              <li>Asset allocation for growth & risk control</li>
+              <li>Paperless onboarding & portfolio tracking</li>
+            </ul>
+          </div>
+          <div class="card" style="padding:16px;">
+            <div class="pill">Our Services</div>
+            <h3>Insurance & Risk Planning</h3>
+            <ul>
+              <li>Life, health, and crop insurance options</li>
+              <li>Needs-based cover, not product pushing</li>
+              <li>Claims support and policy reviews</li>
+            </ul>
+          </div>
+          <div class="card" style="padding:16px;">
+            <div class="pill">Our Services</div>
+            <h3>Financial Literacy</h3>
+            <ul>
+              <li>Online & on-ground workshops</li>
+              <li>Simple explainers in local languages</li>
+              <li>Tools & guides to build good habits</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Why choose us</h2>
+        <ul>
+          <li><strong>Simple & transparent:</strong> Clear recommendations, no jargon.</li>
+          <li><strong>Goal-first planning:</strong> Child education, home, retirement, protection.</li>
+          <li><strong>Local focus:</strong> Designed for emerging India.</li>
+          <li><strong>SEBI-registered Mutual Fund Distributor (ARN holder):</strong> Credible investment support.</li>
+        </ul>
+
+        <a href="/contact" class="cta">Talk to an advisor</a>
+      </article>
+
+      <aside class="card">
+        <h2>Fast Facts</h2>
+        <ul>
+          <li><strong>Brand:</strong> BachatVikas</li>
+          <li><strong>Tagline:</strong> Smart savings, secure future – your partner in investments and insurance.</li>
+          <li><strong>Focus:</strong> Empowering individuals and families with expert financial guidance for long-term growth.</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="mailto:info@bachatvikas.in"></a><br />
+          Phone: <a href="Phone:+91-9423420729"></a><br />
+        </p>
+
+        <h2>Social</h2>
+        <p>
+          <a href="https://instagram.com/bachatvikas" rel="noopener">Instagram</a> ·
+          <a href="https://facebook.com/bachatvikas" rel="noopener">Facebook</a>
+        </p>
+
+        <p class="muted" style="margin-top:14px; font-size:12px;">
+          Disclaimer: Investments are subject to market risks. Please read all scheme-related documents carefully before investing. BachatVikas is a SEBI-registered Mutual Fund Distributor (ARN holder).
+        </p>
+      </aside>
+    </section>
+
+    <footer>
+      © <span id="year"></span> BachatVikas. All rights reserved. · <a href="/privacy">Privacy Policy</a>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
