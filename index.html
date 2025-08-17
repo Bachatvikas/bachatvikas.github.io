@@ -147,6 +147,51 @@
       font-size: 0.9rem;
       color: #333;
     }
+
+    /* ===== Inquiry Modal Styles ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 8% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%; max-width: 500px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .close {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .modal-content button {
+      background: #ff6600; color: #fff;
+      border: none; padding: 10px;
+      margin-top: 15px; cursor: pointer;
+      width: 100%; border-radius: 5px;
+    }
+    .modal-content button:hover {
+      background: #e65c00;
+    }
+    .modal-content button[type="button"] {
+      background: #25d366; /* WhatsApp green */
+    }
+    .modal-content button[type="button"]:hover {
+      background: #1ebe57;
+    }
+    .modal-content input, .modal-content select, .modal-content textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
   </style>
 </head>
 <body>
@@ -165,7 +210,7 @@
   <section class="hero">
     <h1>Smart savings, secure future – your partner in investments and insurance</h1>
     <p>BachatVikas — जहाँ बचत हो, वहाँ विकास हो!</p>
-    <button class="btn">Get Started</button>
+    <button class="btn" onclick="openForm()">Get Started</button>
   </section>
 
   <section class="services">
@@ -208,11 +253,11 @@
         <a href="fd.html">Learn More</a>
       </div>
       <div class="blog-card">
-  <h3>Insurance</h3>
-  <p>Protect your family and future with smart insurance plans.</p>
-  <a href="insurance.html">Learn More</a>
-</div>
- <div class="blog-card">
+        <h3>Insurance</h3>
+        <p>Protect your family and future with smart insurance plans.</p>
+        <a href="insurance.html">Learn More</a>
+      </div>
+      <div class="blog-card">
         <h3>Loans</h3>
         <p>Personal, business & education loans made simple.</p>
         <a href="loans.html">Learn More</a>
@@ -223,7 +268,70 @@
   <footer class="footer">
     © 2025 BachatVikas. All rights resevred.
     <a href="/privacy.html">Privacy Policy</a> ·
-  <a href="/terms.html">Terms & Conditions</a>
+    <a href="/terms.html">Terms & Conditions</a>
   </footer>
+
+  <!-- ===== Inquiry Form Modal ===== -->
+  <div id="inquiryForm" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm()">&times;</span>
+      <h2>Inquiry Form</h2>
+      <form id="inquiryFormData" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="type">Investment Type</label>
+        <select id="type" name="investment_type" required>
+          <option value="">-- Select --</option>
+          <option value="Mutual Fund">Mutual Fund</option>
+          <option value="Insurance">Insurance</option>
+          <option value="Loan">Loan</option>
+          <option value="FD">Fixed Deposit</option>
+          <option value="SIP">SIP</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Submit via Email</button>
+        <button type="button" onclick="sendWhatsApp()">Send via WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== Script for Modal + WhatsApp ===== -->
+  <script>
+    function openForm() {
+      document.getElementById("inquiryForm").style.display = "block";
+    }
+    function closeForm() {
+      document.getElementById("inquiryForm").style.display = "none";
+    }
+    function sendWhatsApp() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const type = document.getElementById("type").value;
+      const message = document.getElementById("message").value;
+
+      const text = `New Inquiry:%0A
+Name: ${name}%0A
+Email: ${email}%0A
+Phone: ${phone}%0A
+Investment Type: ${type}%0A
+Message: ${message}`;
+
+      const whatsappNumber = "919423420729";
+      const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+      window.open(url, "_blank");
+    }
+  </script>
 </body>
 </html>
