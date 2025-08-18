@@ -1,50 +1,25 @@
-/* -------------------------
-   Global Styles
--------------------------- */
+/* Base Layout */
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #f6fdfb, #d0f0e0);
+  background-color: #c8efe3;
   color: #1a202c;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: 0.3s ease;
-}
-a:hover {
-  color: #007f5f;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* -------------------------
-   Header
--------------------------- */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #e6fffa;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background-color: #e6fffa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: bold;
   color: #007f5f;
-  letter-spacing: -0.5px;
 }
 .logo span {
   color: #1a202c;
@@ -52,141 +27,147 @@ header {
 
 nav a {
   margin-left: 1.5rem;
-  font-weight: 600;
-  font-size: 1rem;
-  position: relative;
+  text-decoration: none;
+  color: #1a202c;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
-nav a::after {
-  content: '';
-  width: 0%;
-  height: 2px;
-  display: block;
-  background: #007f5f;
-  transition: 0.3s;
-  margin-top: 3px;
-}
-nav a:hover::after {
-  width: 100%;
+nav a:hover {
+  color: #007f5f;
 }
 
-/* -------------------------
-   Hero Section
--------------------------- */
+/* Hero Section */
 .hero {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #c8efe3, #e6fffa);
-  border-bottom-left-radius: 50% 8%;
-  border-bottom-right-radius: 50% 8%;
+  background: linear-gradient(135deg, #d0f0e0, #a4e4c2);
 }
-
 .hero h1 {
   font-size: 2.5rem;
-  font-weight: 800;
-  color: #1a202c;
   margin-bottom: 1rem;
+  color: #1a202c;
 }
 .hero p {
-  font-size: 1.2rem;
-  color: #374151;
+  font-size: 1.1rem;
+  color: #333;
 }
 
+/* Buttons */
 .btn {
   margin-top: 1.5rem;
-  background: linear-gradient(90deg, #007f5f, #00a86b);
+  background-color: #007f5f;
   color: white;
   border: none;
   padding: 0.9rem 2rem;
   font-size: 1rem;
-  font-weight: 600;
-  border-radius: 50px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 127, 95, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0, 127, 95, 0.3);
+  background-color: #005f46;
+  transform: translateY(-2px);
 }
 
-/* -------------------------
-   Services Section
--------------------------- */
+/* Sections General */
+section {
+  padding: 3rem 2rem;
+}
+
+/* Services Section */
 .services {
-  padding: 4rem 2rem;
+  background: linear-gradient(120deg, #e6fffa, #bdf2e2);
   text-align: center;
-  background: #ffffff;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1100px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 .services h2 {
   font-size: 2rem;
+  margin-bottom: 1rem;
   color: #007f5f;
-  margin-bottom: 2rem;
-}
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-.service-card {
-  background: #f9fffc;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
-}
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-.service-card h3 {
-  color: #1a202c;
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
-}
-.service-card p {
-  color: #4b5563;
-  font-size: 0.95rem;
 }
 
-/* -------------------------
-   Inquiry Form
--------------------------- */
-.inquiry-form {
-  margin: 4rem auto;
+/* Blogs Section */
+.blogs {
+  background: linear-gradient(120deg, #d9f7f0, #bdf2e2);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1100px;
   padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.blogs h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #007f5f;
+}
+
+/* Customer Reviews */
+.reviews {
+  background: linear-gradient(135deg, #e6fffa, #a4e4c2);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1100px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.reviews h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #007f5f;
+}
+.review-card {
+  background: #ffffff;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 700px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.review-card p {
+  font-style: italic;
+  color: #333;
+}
+.review-card span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #007f5f;
+}
+
+/* Inquiry Form Section */
+.inquiry-form {
+  margin: 2rem auto;
+  padding: 1.5rem;
   max-width: 800px;
   background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
 }
 .inquiry-form h2 {
   margin-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1.8rem;
   color: #007f5f;
 }
 .inquiry-form iframe {
   width: 100%;
   height: 900px;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 2px solid #ddd;
 }
 
-/* -------------------------
-   Footer
--------------------------- */
+/* Footer */
 .footer {
-  background: #1a202c;
-  color: #e6fffa;
+  background-color: #e6fffa;
   text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.95rem;
-}
-.footer a {
-  margin: 0 0.8rem;
-  font-size: 1.2rem;
-  color: #e6fffa;
-}
-.footer a:hover {
-  color: #00a86b;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #333;
 }
