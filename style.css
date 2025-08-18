@@ -140,3 +140,22 @@ nav a {
   font-weight: bold;
   color: #007f5f;
 }
+/* Force Services & Blogs Learn More buttons to light blue */
+.services a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #3b82f6; /* Light Blue */
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.services a:hover {
+  background-color: #60a5fa; /* lighter blue on hover */
+}
+
