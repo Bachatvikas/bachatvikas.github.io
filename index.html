@@ -30,7 +30,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon-32x32.png">
 
-  <!-- Internal CSS -->
+  <!-- Internal CSS (your original + small overrides at the end) -->
   <style>
     * {margin:0;padding:0;box-sizing:border-box;}
     body {font-family:'Inter',sans-serif;background:#e0f2f7;color:#1a202c;line-height:1.6;}
@@ -48,6 +48,114 @@
     .footer {text-align:center;padding:2rem 1rem;background:#b5d9e7;font-size:0.9rem;color:#333;}
     .footer a {margin:0 8px;color:#333;text-decoration:none;}
     .social-icons a {margin:0 10px;font-size:20px;color:#333;text-decoration:none;}
+
+    /* =========================
+       ✅ NEW: Modal (hidden + styled)
+       ========================= */
+    .modal {
+      display: none;              /* hidden by default */
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      overflow: auto;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+    .modal-content {
+      background: #fff;
+      margin: 6% auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%; max-width: 520px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      animation: slideUp 0.3s ease;
+    }
+    .modal-content h2 {margin-bottom: 10px; color:#1a202c;}
+    .modal-content label {display:block; margin-top:12px; font-weight:600; color:#333;}
+    .modal-content input, .modal-content select, .modal-content textarea {
+      width:100%; padding:10px; margin-top:6px; border:1px solid #cbd5e1; border-radius:8px; font-size:1rem;
+    }
+    .modal-content button {
+      margin-top: 14px; padding: 10px 16px; border:none; border-radius:8px; cursor:pointer; font-weight:600;
+    }
+    .modal-content button[type="submit"] { background:#0077b6; color:#fff; }
+    .modal-content button[type="button"] { background:#25d366; color:#fff; margin-left: 6px; }
+    .close { float:right; font-size:24px; cursor:pointer; color:#64748b; }
+    .close:hover { color:#0f172a; }
+    @keyframes fadeIn { from {opacity:0} to {opacity:1} }
+    @keyframes slideUp { from {transform:translateY(20px); opacity:0} to {transform:translateY(0); opacity:1} }
+
+    /* =========================
+       ✅ NEW: Green theme for Services, Blogs, Reviews
+       (Keeps your existing classes; just styles them)
+       ========================= */
+    .services {
+      background: linear-gradient(120deg, #e6fffa, #c6f7e2);
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 1200px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    .services .card h3 { color: #0f766e; }
+    .services .card { background:#ffffff; transition:transform .25s, box-shadow .25s; }
+    .services .card:hover { transform: translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.08); }
+
+    .blog-section {
+      background: linear-gradient(120deg, #f0fff4, #dcfce7);
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 1200px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      padding-bottom: 2.2rem;
+    }
+    .blog-section h2 { color:#0f766e; }
+    .blog-card {
+      background:#ffffff;
+      border:1px solid #e2f5ea;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      border-color:#c7ecd7;
+    }
+    .blog-card a {
+      background:#0f766e; /* green button */
+    }
+
+    .reviews {
+      background: linear-gradient(135deg, #e6fffa, #c7f9e8);
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 1200px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    .reviews h2 { color:#0f766e; margin-bottom: 1rem; }
+    .review-card {
+      max-width: 360px;
+      background:#ffffff;
+      border:1px solid #e2f5ea;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .review-card p { font-style: italic; color:#374151; }
+    .review-card strong { display:block; margin-top:.5rem; color:#0f766e; }
+    .review-card:hover { transform: translateY(-6px); box-shadow: 0 10px 22px rgba(0,0,0,0.08); }
+
+    /* =========================
+       ✅ NEW: Better CTA button (keeps .btn class)
+       ========================= */
+    .btn {
+      background: linear-gradient(90deg, #0f766e, #10b981);
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(16,185,129,0.25);
+      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(16,185,129,0.35);
+      opacity: 0.95;
+    }
   </style>
 </head>
 <body>
@@ -130,7 +238,7 @@
     <p><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms & Conditions</a></p>
   </footer>
 
-  <!-- ✅ Inquiry Form Modal (same as before) -->
+  <!-- ✅ Inquiry Form Modal -->
   <div id="inquiryForm" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeForm()">&times;</span>
@@ -162,8 +270,13 @@
 
   <!-- ✅ Scripts -->
   <script>
-    function openForm(){document.getElementById("inquiryForm").style.display="block";}
-    function closeForm(){document.getElementById("inquiryForm").style.display="none";}
+    function openForm(){ document.getElementById("inquiryForm").style.display="block"; }
+    function closeForm(){ document.getElementById("inquiryForm").style.display="none"; }
+    // Close modal when clicking outside the dialog
+    window.addEventListener('click', function(e){
+      const modal = document.getElementById('inquiryForm');
+      if(e.target === modal){ closeForm(); }
+    });
     function sendWhatsApp(){
       const name=document.getElementById("name").value;
       const email=document.getElementById("email").value;
