@@ -220,4 +220,19 @@ nav a {
     background-color: #2563eb; /* Darker blue */
     color: #fff !important;
 }
+a.learn-more {
+    background-color: #3b82f6 !important; /* Blue background */
+    color: #ffffff !important;           /* White text */
+    padding: 10px 20px !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
+    border: none !important;
+}
+
+a.learn-more:hover {
+    background-color: #2563eb !important; /* Darker blue on hover */
+    color: #ffffff !important;
+}
 
