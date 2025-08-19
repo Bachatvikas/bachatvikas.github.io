@@ -184,35 +184,16 @@ nav a {
     border: none !important;
 }
 
-.blog-card a:hover {
-    background-color: #0056b3 !important; /* Darker blue on hover */
-    color: #ffffff !important;
-}
-/* Force Learn More button to always stay blue */
-.blog-card a,
-.blog-card a:visited,
-.blog-card .btn {
-    background-color: #3b82f6 !important; /* Light Blue */
-    color: #ffffff !important; /* White text */
-    padding: 8px 16px !important;
-    border-radius: 6px !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    border: none !important;
-}
-a.learn-more-btn {
-  display: inline-block !important;
-  padding: 10px 20px !important;
-  background-color: #007bff !important;
-  color: #fff !important;
-  text-decoration: none !important;
-  border-radius: 5px !important;
-  font-weight: bold !important;
-  transition: background-color 0.3s ease !important;
+.btn-primary {
+  background-color: white;
+  color: #007bff; /* your brand blue */
+  border: 2px solid #007bff;
+  transition: all 0.3s ease-in-out;
 }
 
-a.learn-more-btn:hover {
-  background-color: #0056b3 !important;
-  color: #fff !important;
+.btn-primary:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05); /* slight zoom */
+  box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.4); /* stylish glow */
 }
-
