@@ -172,50 +172,15 @@ nav a {
 .blog-card a:hover {
   background: #2563eb;   /* Darker Blue on hover */
 }
-.blog-card a {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 8px 16px;
-  background: #3b82f6;
-  color: #ffffff !important;
-  text-decoration: none !important; 
-  border-radius: 6px;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* ✅ subtle shadow */
-}
-.blog-card a {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 8px 16px;
-  background: #3b82f6;
-  color: #ffffff !important;
-  text-decoration: none !important; 
-  border-radius: 6px;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* ✅ subtle shadow */
-}
-.blog-card a {
-    display: inline-block;
-    background-color: transparent !important; /* remove green background */
-    color: #3498db !important; /* light blue text */
-    border: none !important; /* remove border if any */
-    text-decoration: underline; /* underline like a link */
-    font-weight: 600;
-    padding: 0; /* remove extra green padding */
-}
-
-.blog-card a:hover {
-    color: #1d6fa5 !important; /* darker blue on hover */
-    text-decoration: none;
-}
-.blog-card a {
-    display: inline-block;
+.blog-card a,
+.blog-card a:visited {
+    display: inline-block !important;
     background-color: #007bff !important; /* Blue background */
     color: #ffffff !important; /* White text */
-    padding: 8px 16px; /* Button padding */
-    border-radius: 4px; /* Rounded corners */
-    text-decoration: none !important; /* Remove underline */
-    font-weight: 600;
+    padding: 8px 16px !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
     border: none !important;
 }
 
@@ -223,4 +188,3 @@ nav a {
     background-color: #0056b3 !important; /* Darker blue on hover */
     color: #ffffff !important;
 }
-
