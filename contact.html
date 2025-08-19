@@ -36,16 +36,22 @@
       background: linear-gradient(90deg, gold, orange, green);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      margin-left: 15px; /* moved slightly right */
     }
     .logo span {
       background: linear-gradient(90deg, gold, orange, green);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    /* Adjust Home link */
+    nav {
+      margin-right: 15px; /* moved slightly left */
+    }
   </style>
 </head>
 <body>
-  <header>
+  <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
     <div class="logo">Bachat<span>Vikas</span></div>
     <nav>
       <a href="index.html">Home</a>
