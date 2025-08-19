@@ -172,3 +172,14 @@ nav a {
 .blog-card a:hover {
   background: #2563eb;   /* Darker Blue on hover */
 }
+.blog-card a {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #3b82f6;   /* Light Blue */
+  color: #ffffff !important;
+  text-decoration: none !important; /* ✅ removes underline */
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
