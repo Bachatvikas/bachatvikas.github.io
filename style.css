@@ -188,3 +188,21 @@ nav a {
     background-color: #0056b3 !important; /* Darker blue on hover */
     color: #ffffff !important;
 }
+/* Force Learn More button to always stay blue */
+.blog-card a,
+.blog-card a:visited,
+.blog-card .btn {
+    background-color: #3b82f6 !important; /* Light Blue */
+    color: #ffffff !important; /* White text */
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    border: none !important;
+}
+
+.blog-card a:hover,
+.blog-card .btn:hover {
+    background-color: #2563eb !important; /* Darker blue on hover */
+    color: #ffffff !important;
+}
