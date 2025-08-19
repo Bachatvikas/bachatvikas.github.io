@@ -5,6 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact - BachatVikas</title>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    .contact-section {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 30px;
+      text-align: center;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .contact-section h2 {
+      color: #1a5e2a;
+      margin-bottom: 15px;
+    }
+    .contact-section p {
+      font-size: 1.1rem;
+      margin: 8px 0;
+      color: #333;
+    }
+    .contact-section .highlight {
+      font-weight: bold;
+      color: #0d7a3b;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -13,24 +37,21 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
   </header>
 
-  <main class="content">
-    <h2>Contact Us</h2>
-    <p>Email: info@bachatvikas.in</p>
-    <p>Phone: +91-9423420729</p>
-
-    <!-- Inquiry Form -->
-    <section class="inquiry-form">
-      <h2>Inquiry Form</h2>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeDsBFdTrvftnNCLoRZU7wufS4RB7MmryFCevj2dtjw3MMxhg/viewform?embedded=true" 
-        frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  <main>
+    <section class="contact-section">
+      <h2>Get in Touch</h2>
+      <p>We’re here to help you with your financial journey.  
+         Feel free to reach out to us through the details below:</p>
+      <p>Email: <span class="highlight">info@bachatvikas.in</span></p>
+      <p>Phone: <span class="highlight">+91-9423420729</span></p>
+      <p>Our team will respond as soon as possible.</p>
     </section>
   </main>
 
   <footer class="footer">© 2025 BachatVikas</footer>
 </body>
 </html>
-
