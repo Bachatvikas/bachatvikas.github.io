@@ -314,3 +314,25 @@ footer {
   color: var(--muted);
 }
 footer a { color: var(--brand); font-weight: 500; }
+/* Navbar Left Padding */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-left: 30px;  /* 👈 ye thoda left side se space dega */
+}
+
+/* Logo Colors */
+.logo h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo .gold {
+  color: #d4af37; /* Official Gold */
+}
+
+.logo .green {
+  color: #006400; /* Official Green */
+}
+
