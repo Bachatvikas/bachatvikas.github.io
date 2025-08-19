@@ -201,25 +201,7 @@ nav a {
     border: none !important;
 }
 
-.blog-card a:hover,
-.blog-card .btn:hover {
-    background-color: #2563eb !important; /* Darker blue on hover */
-    color: #ffffff !important;
-}
-.learn-more {
-    background-color: #3b82f6; /* Blue */
-    color: #fff !important;
-    padding: 8px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-}
-
-.learn-more:hover {
-    background-color: #2563eb; /* Darker blue */
-    color: #fff !important;
-}
+/* Force button style */
 a.learn-more {
     background-color: #3b82f6 !important; /* Blue background */
     color: #ffffff !important;           /* White text */
@@ -231,8 +213,17 @@ a.learn-more {
     border: none !important;
 }
 
+/* Hover effect */
 a.learn-more:hover {
-    background-color: #2563eb !important; /* Darker blue on hover */
+    background-color: #2563eb !important;
     color: #ffffff !important;
 }
 
+/* Remove any green box/icon backgrounds */
+a.learn-more i,
+a.learn-more::before,
+a.learn-more::after {
+    background: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+}
