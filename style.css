@@ -157,26 +157,18 @@ nav a {
 .services .card a:hover {
   background-color: #60a5fa !important; /* lighter blue on hover */
 }
-/* ✅ Force Learn More buttons in both Services & Blogs */
-.blog-card a,
-.blog-section a,
-.services a {
+.blog-card a {
   display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background-color: #3b82f6 !important; /* Light Blue */
-  color: #ffffff !important;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none !important;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #3b82f6;   /* Light Blue */
+  color: #ffffff;
+  text-decoration: none;
   border-radius: 6px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
 }
 
-.blog-card a:hover,
-.blog-section a:hover,
-.services a:hover {
-  background-color: #60a5fa !important; /* lighter blue on hover */
-  color: #ffffff !important;
+.blog-card a:hover {
+  background: #2563eb;   /* Darker Blue on hover */
 }
-
