@@ -194,4 +194,18 @@ nav a {
   font-weight: 600;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* ✅ subtle shadow */
 }
+.blog-card a {
+    display: inline-block;
+    background-color: transparent !important; /* remove green background */
+    color: #3498db !important; /* light blue text */
+    border: none !important; /* remove border if any */
+    text-decoration: underline; /* underline like a link */
+    font-weight: 600;
+    padding: 0; /* remove extra green padding */
+}
+
+.blog-card a:hover {
+    color: #1d6fa5 !important; /* darker blue on hover */
+    text-decoration: none;
+}
 
