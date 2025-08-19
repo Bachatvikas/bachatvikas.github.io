@@ -208,4 +208,19 @@ nav a {
     color: #1d6fa5 !important; /* darker blue on hover */
     text-decoration: none;
 }
+.blog-card a {
+    display: inline-block;
+    background-color: #007bff !important; /* Blue background */
+    color: #ffffff !important; /* White text */
+    padding: 8px 16px; /* Button padding */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none !important; /* Remove underline */
+    font-weight: 600;
+    border: none !important;
+}
+
+.blog-card a:hover {
+    background-color: #0056b3 !important; /* Darker blue on hover */
+    color: #ffffff !important;
+}
 
