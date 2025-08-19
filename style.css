@@ -197,3 +197,20 @@ nav a {
   transform: scale(1.05); /* slight zoom */
   box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.4); /* stylish glow */
 }
+.learn-more {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: white;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+  background-color: #007bff;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
