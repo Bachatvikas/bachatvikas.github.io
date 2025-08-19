@@ -120,10 +120,16 @@
       box-shadow: 0 10px 22px rgba(0,0,0,0.08);
       border-color:#c7ecd7;
     }
+    /* your older white button kept for non-learn-more links (if any) */
     .blog-card a {
-      background:#ffffff; /* white button */
-      color:#1a202c;      /* dark text for contrast */
-      border:1px solid #cbd5e1; /* subtle outline so it still looks like a button */
+      background:#ffffff;
+      color:#1a202c;
+      border:1px solid #cbd5e1;
+      padding:0.6rem 1rem;
+      border-radius:999px;
+      text-decoration:none;
+      display:inline-block;
+      font-weight:600;
     }
 
     .reviews {
@@ -139,6 +145,8 @@
       background:#ffffff;
       border:1px solid #e2f5ea;
       transition: transform .25s, box-shadow .25s;
+      position: relative;
+      padding-top: 2.2rem; /* space for avatar badge */
     }
     .review-card p { font-style: italic; color:#374151; }
     .review-card strong { display:block; margin-top:.5rem; color:#0f766e; }
@@ -158,6 +166,52 @@
       box-shadow: 0 10px 26px rgba(16,185,129,0.35);
       opacity: 0.95;
     }
+
+    /* =========================
+       🔧 Minimal, non-destructive enhancements (ONLY additions)
+       ========================= */
+    /* Services: inline SVG icon alignment */
+    .services .card h3 {
+      display:flex; align-items:center; justify-content:center; gap:8px;
+    }
+    .services .icon {
+      width:24px; height:24px; color:#0f766e;
+    }
+
+    /* Blog: make Learn More a consistent green button (override safely) */
+    .blog-card a.learn-more {
+      background: linear-gradient(90deg, #0f766e, #10b981) !important;
+      color:#ffffff !important;
+      border:none !important;
+      box-shadow: 0 6px 18px rgba(16,185,129,0.2);
+    }
+    .blog-card a.learn-more:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(16,185,129,0.3);
+    }
+
+    /* Why Choose: accent underline under heading */
+    .why-choose h2::after {
+      content:""; display:block; width:100px; height:4px; margin:8px auto 0;
+      background: linear-gradient(90deg, #0f766e, #10b981);
+      border-radius:2px;
+    }
+
+    /* Testimonials: simple avatar badge via CSS (no content change) */
+    .reviews .review-card::before {
+      content:"👤";
+      position:absolute; top:8px; left:50%; transform:translateX(-50%);
+      width:36px; height:36px; line-height:36px; text-align:center;
+      border-radius:50%;
+      background:#e6fffa;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      font-size:20px;
+    }
+
+    /* Footer: social hover + spacing for CTA */
+    .social-icons a { transition: transform .2s ease, opacity .2s ease; display:inline-block; }
+    .social-icons a:hover { transform: translateY(-2px) scale(1.1); opacity: .85; }
+    .footer .cta-footer { margin-top:10px; display:inline-block; }
   </style>
 </head>
 <body>
@@ -181,59 +235,79 @@
   <!-- ✅ Services Section -->
   <section class="services">
     <div class="card">
-      <h3>Mutual Fund Distribution</h3>
+      <h3>
+        <!-- graph/trend icon -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M3 3v18h18"></path>
+          <path d="M7 14l4-4 4 4 4-6"></path>
+        </svg>
+        Mutual Fund Distribution
+      </h3>
       <p>SIPs, Lumpsum distribution services</p>
     </div>
     <div class="card">
-      <h3>Financial Literacy Workshops</h3>
+      <h3>
+        <!-- graduation cap -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M3 8l9-4 9 4-9 4-9-4z"></path>
+          <path d="M7 10v4a5 5 0 0010 0v-4"></path>
+        </svg>
+        Financial Literacy Workshops
+      </h3>
       <p>Online & onground training</p>
     </div>
     <div class="card">
-      <h3>Insurance & Risk Planning</h3>
+      <h3>
+        <!-- shield -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z"></path>
+        </svg>
+        Insurance & Risk Planning
+      </h3>
       <p>Life, health & crop insurance</p>
     </div>
   </section>
 
-  <!-- ✅ Blog Section -->
+  <!-- ✅ Blog/Service Links Section -->
   <section class="blog-section">
-    <h2>Our Services & Blogs</h2>
+    <h2>Our Services</h2>
     <div class="blog-cards">
       <div class="blog-card">
-  <h3>Mutual Funds</h3>
-  <p>Smart investment solutions for long-term growth.</p>
-  <a href="mutual-funds.html" class="learn-more">Learn More</a>
-</div>
+        <h3>Mutual Funds</h3>
+        <p>Smart investment solutions for long-term growth.</p>
+        <a href="mutual-funds.html" class="learn-more">Learn More</a>
+      </div>
 
-<div class="blog-card">
-  <h3>SIP</h3>
-  <p>Start small, grow big with systematic investments.</p>
-  <a href="sip.html" class="learn-more">Learn More</a>
-</div>
+      <div class="blog-card">
+        <h3>SIP</h3>
+        <p>Start small, grow big with systematic investments.</p>
+        <a href="sip.html" class="learn-more">Learn More</a>
+      </div>
 
-<div class="blog-card">
-  <h3>NPS</h3>
-  <p>Secure your retirement with National Pension Scheme.</p>
-  <a href="nps.html" class="learn-more">Learn More</a>
-</div>
+      <div class="blog-card">
+        <h3>NPS</h3>
+        <p>Secure your retirement with National Pension Scheme.</p>
+        <a href="nps.html" class="learn-more">Learn More</a>
+      </div>
 
-<div class="blog-card">
-  <h3>Fixed Deposits</h3>
-  <p>Safe and guaranteed returns with FD plans.</p>
-  <a href="fd.html" class="learn-more">Learn More</a>
-</div>
+      <div class="blog-card">
+        <h3>Fixed Deposits</h3>
+        <p>Safe and guaranteed returns with FD plans.</p>
+        <a href="fd.html" class="learn-more">Learn More</a>
+      </div>
 
-<div class="blog-card">
-  <h3>Insurance</h3>
-  <p>Protect your family and future with smart insurance plans.</p>
-  <a href="insurance.html" class="learn-more">Learn More</a>
-</div>
+      <div class="blog-card">
+        <h3>Insurance</h3>
+        <p>Protect your family and future with smart insurance plans.</p>
+        <a href="insurance.html" class="learn-more">Learn More</a>
+      </div>
 
-<div class="blog-card">
-  <h3>Loans</h3>
-  <p>Personal, business & education loans made simple.</p>
-  <a href="loans.html" class="learn-more">Learn More</a>
-</div>
-
+      <div class="blog-card">
+        <h3>Loans</h3>
+        <p>Personal, business & education loans made simple.</p>
+        <a href="loans.html" class="learn-more">Learn More</a>
+      </div>
+    </div><!-- ✅ added missing close for .blog-cards -->
   </section>
 
   <!-- ✅ Why Choose Us -->
@@ -266,6 +340,9 @@
       <a href="https://linkedin.com" target="_blank">💼</a>
       <a href="https://twitter.com" target="_blank">🐦</a>
     </div>
+    <p class="cta-footer">
+      <button class="btn" onclick="openForm()">Book Free Consultation</button>
+    </p>
     <p><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms & Conditions</a></p>
   </footer>
 
@@ -320,4 +397,3 @@
   </script>
 </body>
 </html>
-
