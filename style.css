@@ -201,8 +201,8 @@ nav a {
     border: none !important;
 }
 
-/* Force button style */
-a.learn-more {
+/* Learn More button */
+a[href="mutual-funds.html"] {
     background-color: #3b82f6 !important; /* Blue background */
     color: #ffffff !important;           /* White text */
     padding: 10px 20px !important;
@@ -214,16 +214,14 @@ a.learn-more {
 }
 
 /* Hover effect */
-a.learn-more:hover {
+a[href="mutual-funds.html"]:hover {
     background-color: #2563eb !important;
     color: #ffffff !important;
 }
 
-/* Remove any green box/icon backgrounds */
-a.learn-more i,
-a.learn-more::before,
-a.learn-more::after {
+/* Kill green box (icon background or pseudo-element) */
+a[href="mutual-funds.html"]::before,
+a[href="mutual-funds.html"]::after {
     background: none !important;
-    color: inherit !important;
-    box-shadow: none !important;
+    content: none !important;
 }
