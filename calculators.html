@@ -299,7 +299,7 @@
       const rReal = ((1 + r) / (1 + i)) - 1;
       const FVreal = Math.abs(rReal) < 1e-12 ? P*n : P * ((Math.pow(1+rReal,n)-1)/rReal) * (1+rReal);
 
-      out.textContent = Invested: ₹${rupee(invested)}\nFuture Value (Nominal): ₹${rupee(FV,2)}\nInflation-adjusted: ₹${rupee(FVreal,2)};
+      out.textContent = `Invested: ₹${rupee(invested)}\nFuture Value (Nominal): ₹${rupee(FV,2)}\nInflation-adjusted: ₹${rupee(FVreal,2)}`;
 
       // build yearly arrays
       const labels = [], nominal = [], real = [];
@@ -326,7 +326,7 @@
       const EMI = (P*r*Math.pow(1+r,n)) / (Math.pow(1+r,n)-1);
       const total = EMI*n;
       const interest = total - P;
-      out.textContent = Monthly EMI: ₹${rupee(EMI,2)}\nTotal Interest: ₹${rupee(interest,2)}\nTotal Payment: ₹${rupee(total,2)};
+      out.textContent = `Monthly EMI: ₹${rupee(EMI,2)}\nTotal Interest: ₹${rupee(interest,2)}\nTotal Payment: ₹${rupee(total,2)}`;
     }
 
     // ---------- FD ----------
@@ -338,7 +338,7 @@
       if(!P || !rate || !years){ out.textContent='Please enter principal, rate and years.'; clearCanvas('fdChart'); return; }
       const A = P * Math.pow(1 + rate/100, years);
       const interest = A - P;
-      out.textContent = Maturity Amount: ₹${rupee(A,2)}\nInterest Earned: ₹${rupee(interest,2)};
+      out.textContent = `Maturity Amount: ₹${rupee(A,2)}\nInterest Earned: ₹${rupee(interest,2)}`;
       // simple year-wise
       const labels=[], vals=[];
       for(let y=1;y<=years;y++){ labels.push(String(y)); vals.push(P*Math.pow(1+rate/100,y)); }
@@ -358,7 +358,7 @@
       const futureExp = exp * Math.pow(1+infl, years);
       // corpus: PV of annuity at post-retirement return rate (simplified)
       const corpus = (futureExp*12) / ret;
-      out.textContent = Monthly need at retirement: ₹${rupee(futureExp,2)}\nEstimated corpus required: ₹${rupee(corpus,2)};
+      out.textContent = `Monthly need at retirement: ₹${rupee(futureExp,2)}\nEstimated corpus required: ₹${rupee(corpus,2)}`;
       // show yearwise expense growth till retirement
       const labels=[], vals=[];
       for(let y=1;y<=years;y++){ labels.push(String(curr+y)); vals.push(exp*Math.pow(1+infl,y)); }
@@ -380,7 +380,7 @@
       // estimate annual pension assuming annuity yield 6% (example)
       const annuityYield = 0.06;
       const annualPension = annuitized * annuityYield;
-      out.textContent = Estimated NPS Corpus: ₹${rupee(corpus,2)}\nPortion for Annuity (${(annPct*100).toFixed(0)}%): ₹${rupee(annuitized,2)}\nEstimated Annual Pension: ₹${rupee(annualPension,2)} (approx);
+      out.textContent = `Estimated NPS Corpus: ₹${rupee(corpus,2)}\nPortion for Annuity (${(annPct*100).toFixed(0)}%): ₹${rupee(annuitized,2)}\nEstimated Annual Pension: ₹${rupee(annualPension,2)} (approx)`;
       // yearwise
       const labels=[], vals=[];
       for(let y=1;y<=years;y++){ const m=y*12; labels.push(String(y)); vals.push(monthly * ((Math.pow(1+r,m)-1)/r) * (1+r)); }
@@ -410,7 +410,7 @@
         if(balance < 0){ balance = 0; }
         if(m%12===0){ labels.push(String(m/12)); balances.push(balance); }
       }
-      out.textContent = Final Balance after ${years} years: ₹${rupee(balance,2)}\nTotal Withdrawn: ₹${rupee(totalWithdrawn,2)};
+      out.textContent = `Final Balance after ${years} years: ₹${rupee(balance,2)}\nTotal Withdrawn: ₹${rupee(totalWithdrawn,2)}`;
       drawLineOnly('swpChart', labels, balances, '#0b72b9');
     }
 
@@ -517,6 +517,7 @@
   </script>
 </body>
 </html>
+
 
 
 
