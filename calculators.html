@@ -26,6 +26,19 @@
     .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
     header .top{display:flex;align-items:center;gap:12px}
     header a.home{color:#fff;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:8px}
+    /* Brand gradient text for Home icon and H1 */
+    .brand-gradient{
+      background: linear-gradient(90deg, var(--gold) 0%, var(--green) 45%, var(--light-blue) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent; /* fallback will be transparent but parent provides contrast */
+      font-weight:800;
+      display:inline-block;
+    }
+    /* Slight stroke for better contrast on light backgrounds */
+    .brand-gradient-stroke{
+      text-shadow: 0 0 0 rgba(0,0,0,0.02);
+    }
     header h1{margin:0 auto 0 6px;font-size:22px;font-weight:800}
     header p{margin:6px 0 0 0;color:rgba(255,255,255,.9);font-size:13px}
 
@@ -55,6 +68,7 @@
     @media (max-width:720px){
       .icon-card{width:45%}
       .wrap{padding:0 12px}
+      header h1{font-size:18px}
     }
     @media (max-width:420px){
       .icon-card{width:90%}
@@ -65,11 +79,14 @@
   <header>
     <div class="wrap">
       <div class="top">
-        <a class="home" href="/"><span style="font-size:20px">🏠</span><span>Home</span></a>
-        <h1>BachatVikas Financial Calculators</h1>
+        <!-- kept structure intact; applied brand-gradient to icon and text -->
+        <a class="home" href="/">
+          <span class="brand-gradient brand-gradient-stroke" style="font-size:20px;line-height:1">🏠</span>
+          <span class="brand-gradient brand-gradient-stroke" style="margin-left:6px">Home</span>
+        </a>
+        <!-- BachatVikas title with gradient coloring (gold -> green -> light-blue) -->
+        <h1><span class="brand-gradient">BachatVikas Financial Calculators</span></h1>
       </div>
-      <p style="margin-top:6px">Light blue interface • <span style="color:var(--green)">Green</span> growth • <span style="color:var(--gold)">Gold</span> real-value insight</p>
-    </div>
   </header>
 
   <div class="hint">Choose a calculator below. SIP is open by default and shows a year-wise growth curve (Nominal vs Inflation-adjusted).</div>
@@ -520,8 +537,6 @@
 </body>
 </html>
 
-</body>
-</html>
 
 
 
