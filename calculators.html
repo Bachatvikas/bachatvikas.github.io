@@ -1,230 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BachatVikas Financial Calculators | SIP, EMI, FD, Retirement</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BachatVikas - Calculators: SIP, EMI, FD, Retirement, NPS & SWP</title>
 
-  <!-- ✅ SEO Meta Tags -->
-  <meta name="description" content="Use free online calculators by BachatVikas: SIP calculator (with inflation & growth chart), Home Loan EMI calculator, Fixed Deposit calculator, and Retirement planning calculator." />
-  <meta name="keywords" content="BachatVikas SIP Calculator, EMI Calculator, FD Calculator, Retirement Calculator, inflation adjusted SIP, financial planning tools India" />
+  <!-- SEO -->
+  <meta name="description" content="BachatVikas calculators: SIP (inflation adjusted + chart), EMI, FD, Retirement, NPS and SWP. Plan savings and retirement with light-blue, green & gold themed tools." />
+  <meta name="keywords" content="SIP calculator, EMI calculator, FD calculator, Retirement calculator, NPS calculator, SWP calculator, inflation adjusted SIP" />
   <meta name="author" content="BachatVikas" />
   <link rel="canonical" href="https://www.bachatvikas.in/calculators.html" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="BachatVikas Financial Calculators" />
-  <meta property="og:description" content="Plan your SIP, EMI, FD and Retirement with smart calculators from BachatVikas." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.bachatvikas.in/calculators.html" />
-  <meta property="og:image" content="https://www.bachatvikas.in/Logo.jpeg" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="BachatVikas Financial Calculators" />
-  <meta name="twitter:description" content="SIP with inflation & chart, EMI, FD & Retirement planners." />
-  <meta name="twitter:image" content="https://www.bachatvikas.in/Logo.jpeg" />
-
   <style>
     :root{
-      --light-blue:#e6f7ff;
+      --light-blue:#eaf9ff;
       --deep-blue:#0b72b9;
       --green:#10b981;
       --gold:#d4af37;
       --ink:#0f172a;
+      --muted:#6b7280;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--light-blue);color:var(--ink);}
+    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--light-blue);color:var(--ink);-webkit-font-smoothing:antialiased}
+    header{background:linear-gradient(90deg,#86d8ff,#0b72b9);padding:14px 10px;color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 4px 18px rgba(11,114,185,.12)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+    header .top{display:flex;align-items:center;gap:12px}
+    header a.home{color:#fff;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:8px}
+    header h1{margin:0 auto 0 6px;font-size:22px;font-weight:800}
+    header p{margin:6px 0 0 0;color:rgba(255,255,255,.9);font-size:13px}
 
-    /* Header */
-    header{
-      background:linear-gradient(90deg,#0ea5e9, #0b72b9);
-      color:#fff;
-      padding:14px 16px;
-      position:sticky;top:0;z-index:5;
-      box-shadow:0 2px 10px rgba(0,0,0,.12);
-    }
-    header .row{display:flex;align-items:center;gap:12px;max-width:1200px;margin:0 auto;}
-    header a.home{
-      text-decoration:none;color:#fff;font-size:22px;line-height:1;
-      display:inline-flex;align-items:center;gap:6px;
-    }
-    header h1{margin:0 auto 0 6px;font-size:26px;font-weight:800;letter-spacing:.3px}
-    header p{margin:6px 0 0 44px;opacity:.9}
+    .icon-grid{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin:20px auto}
+    .icon-card{width:220px;background:#fff;border-radius:12px;padding:18px;text-align:center;cursor:pointer;border:1px solid rgba(11,114,185,.06);box-shadow:0 10px 24px rgba(2,6,23,.06);transition:transform .18s,box-shadow .18s}
+    .icon-card:hover{transform:translateY(-6px);box-shadow:0 18px 30px rgba(2,6,23,.08)}
+    .icon-card .emoji{font-size:36px;margin-bottom:8px;color:var(--gold)}
+    .icon-card h3{margin:0;color:var(--deep-blue);font-size:16px}
+    .hint{max-width:1100px;margin:10px auto;color:var(--muted);text-align:center;font-size:14px}
 
-    /* Icon grid */
-    .icon-grid{max-width:1100px;margin:20px auto;display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
-    .icon-card{
-      background:#fff;border:2px solid #cde8ff;border-radius:16px;width:240px;padding:18px;text-align:center;
-      cursor:pointer;box-shadow:0 6px 18px rgba(11,114,185,.08);transition:.25s;
-    }
-    .icon-card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(11,114,185,.14);border-color:#98d2ff}
-    .icon-card .emoji{font-size:38px;display:block;margin-bottom:8px}
-    .icon-card h3{margin:6px 0 0 0;font-size:18px;color:#0b72b9}
+    .calculator{display:none;background:#fff;border-radius:14px;max-width:900px;margin:18px auto;padding:0;border:1px solid #e8f4ff;box-shadow:0 12px 36px rgba(3,22,46,.06);overflow:hidden}
+    .calc-head{background:linear-gradient(90deg,#f0fbff,#e8f9ff);padding:14px 18px;border-bottom:1px solid #e2f3ff}
+    .calc-head h2{margin:0;color:var(--deep-blue);font-size:18px}
+    .calc-body{padding:18px;display:grid;grid-template-columns:1fr;gap:8px}
+    label{font-weight:700;margin-top:8px;color:var(--ink)}
+    input,select{width:100%;padding:10px;border-radius:10px;border:1px solid #dfe9f3;background:#fbfeff}
+    .row{display:flex;gap:10px}
+    .col{flex:1}
+    .controls{margin-top:12px;display:flex;gap:10px;align-items:center}
+    button.calc-btn{background:linear-gradient(90deg,var(--green),#16c79a);color:white;border:none;padding:10px 16px;border-radius:999px;font-weight:800;cursor:pointer}
+    button.calc-btn:hover{filter:brightness(.95)}
+    pre.result{background:#fbfffb;border:1px solid #e6f6ee;padding:10px;border-radius:10px;margin-top:10px;font-family:ui-monospace,monospace;color:#064e3b}
+    .chart-box{margin-top:12px;padding:10px;border-radius:10px;background:linear-gradient(180deg,#fcfeff,#f7feff);border:1px solid #ecf7ff}
+    canvas{width:100%;height:320px;display:block;border-radius:8px;background:#fff}
 
-    /* Calculator panels */
-    .calculator{
-      display:none;background:#fff;max-width:720px;margin:18px auto 24px;border-radius:16px;
-      box-shadow:0 10px 28px rgba(0,0,0,.08);border:1px solid #eaf3ff;overflow:hidden;
+    /* small screens */
+    @media (max-width:720px){
+      .icon-card{width:45%}
+      .wrap{padding:0 12px}
     }
-    .calc-head{padding:14px 18px;background:linear-gradient(90deg,#bdeaff,#eaf7ff);border-bottom:1px solid #d6ebff}
-    .calc-head h2{margin:0;font-size:20px;color:#0b72b9}
-    .calc-body{padding:18px}
-    label{display:block;margin:10px 0 6px;font-weight:600}
-    input{
-      width:100%;padding:10px;border:1px solid #cfd8e3;border-radius:10px;background:#f9fcff;
+    @media (max-width:420px){
+      .icon-card{width:90%}
     }
-    button{
-      margin-top:14px;background:linear-gradient(90deg,var(--green), #16c79a);
-      color:#fff;border:none;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer
-    }
-    button:hover{filter:brightness(.95)}
-    pre{
-      background:#fbfdfc;border:1px solid #e2f5ea;border-radius:12px;padding:10px;margin-top:12px;
-      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace
-    }
-
-    /* Chart */
-    .chart-wrap{margin-top:16px;padding:8px;border:1px solid #e8eef7;border-radius:14px;background:#fcfeff}
-    canvas{display:block;width:100%;height:320px;max-height:320px}
-
-    /* Helper text */
-    .hint{max-width:720px;margin:0 auto 12px;color:#475569;font-size:14px}
-
-    /* Default show SIP so page never blank */
-    #sipCalc{display:block}
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <div class="row">
-      <a class="home" href="/"><span>🏠</span><span>Home</span></a>
-      <h1>BachatVikas Financial Calculators</h1>
+    <div class="wrap">
+      <div class="top">
+        <a class="home" href="/"><span style="font-size:20px">🏠</span><span>Home</span></a>
+        <h1>BachatVikas Financial Calculators</h1>
+      </div>
+      <p style="margin-top:6px">Light blue interface • <span style="color:var(--green)">Green</span> growth • <span style="color:var(--gold)">Gold</span> real-value insight</p>
     </div>
-    <p>Plan your SIP, EMI, FD & Retirement smartly — <strong style="color:#ffd166">gold</strong> goals, <strong style="color:#34d399">green</strong> growth, and <strong>light blue</strong> simplicity.</p>
   </header>
 
-  <!-- Icon Grid -->
-  <div class="icon-grid" aria-label="Choose a calculator">
-    <div class="icon-card" onclick="openCalc('sipCalc')">
-      <span class="emoji">📈</span>
-      <h3>SIP Calculator</h3>
-    </div>
-    <div class="icon-card" onclick="openCalc('emiCalc')">
-      <span class="emoji">🏠</span>
-      <h3>EMI Calculator</h3>
-    </div>
-    <div class="icon-card" onclick="openCalc('fdCalc')">
-      <span class="emoji">🏦</span>
-      <h3>FD Calculator</h3>
-    </div>
-    <div class="icon-card" onclick="openCalc('retireCalc')">
-      <span class="emoji">🧓</span>
-      <h3>Retirement Calculator</h3>
-    </div>
+  <div class="hint">Choose a calculator below. SIP is open by default and shows a year-wise growth curve (Nominal vs Inflation-adjusted).</div>
+
+  <div class="icon-grid wrap" role="navigation" aria-label="Calculators">
+    <div class="icon-card" onclick="openCalc('sipCalc')" title="SIP Calculator"><div class="emoji">📈</div><h3>SIP Calculator</h3></div>
+    <div class="icon-card" onclick="openCalc('emiCalc')" title="EMI Calculator"><div class="emoji">🏠</div><h3>EMI Calculator</h3></div>
+    <div class="icon-card" onclick="openCalc('fdCalc')" title="FD Calculator"><div class="emoji">🏦</div><h3>FD Calculator</h3></div>
+    <div class="icon-card" onclick="openCalc('retireCalc')" title="Retirement Calculator"><div class="emoji">🧓</div><h3>Retirement Calculator</h3></div>
+    <div class="icon-card" onclick="openCalc('npsCalc')" title="NPS Calculator"><div class="emoji">💼</div><h3>NPS Calculator</h3></div>
+    <div class="icon-card" onclick="openCalc('swpCalc')" title="SWP Calculator"><div class="emoji">🔁</div><h3>SWP Calculator</h3></div>
   </div>
 
-  <p class="hint">Tip: SIP calculator opens by default and shows a year-wise growth chart. Use the gold field for inflation if you want real-value projections.</p>
-
-  <!-- ============ SIP CALCULATOR (Default Open) ============ -->
-  <section class="calculator" id="sipCalc" aria-label="SIP Calculator">
-    <div class="calc-head"><h2>📈 SIP Calculator (with Inflation & Year-wise Chart)</h2></div>
+  <!-- SIP (default open) -->
+  <section id="sipCalc" class="calculator" aria-label="SIP Calculator" style="display:block">
+    <div class="calc-head"><h2>📈 SIP Calculator — Nominal & Inflation-adjusted (Year-wise Chart)</h2></div>
     <div class="calc-body">
-      <label>Monthly Investment (₹)</label>
-      <input type="number" id="sipAmount" placeholder="e.g., 5000" />
-
-      <label>Expected Annual Return (%)</label>
-      <input type="number" id="sipRate" placeholder="e.g., 12" />
-
-      <label>Time Period (Years)</label>
-      <input type="number" id="sipYears" placeholder="e.g., 15" />
-
-      <label style="color:var(--gold)">Expected Inflation Rate (%) <small>(optional)</small></label>
-      <input type="number" id="sipInflation" placeholder="e.g., 6" />
-
-      <button onclick="calculateSIP()">Calculate</button>
-
-      <pre id="sipResult">Enter values and click Calculate.</pre>
-
-      <div class="chart-wrap">
-        <canvas id="sipChart" width="680" height="320" aria-label="SIP Year-wise Growth Chart"></canvas>
+      <div class="row">
+        <div class="col">
+          <label>Monthly Investment (₹)</label>
+          <input id="sipAmount" type="number" placeholder="e.g., 5000" />
+        </div>
+        <div class="col">
+          <label>Expected Annual Return (%)</label>
+          <input id="sipRate" type="number" placeholder="e.g., 12" />
+        </div>
       </div>
-      <small style="display:block;margin-top:6px;color:#6b7280;">Green = Nominal value (without inflation) • Gold = Real value (inflation-adjusted)</small>
+
+      <div class="row">
+        <div class="col">
+          <label>Time Period (Years)</label>
+          <input id="sipYears" type="number" placeholder="e.g., 15" />
+        </div>
+        <div class="col">
+          <label style="color:var(--gold)">Expected Inflation (%) <small>(optional)</small></label>
+          <input id="sipInflation" type="number" placeholder="e.g., 6" />
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="calc-btn" onclick="calculateSIP()">Calculate SIP</button>
+      </div>
+
+      <pre id="sipResult" class="result">Click Calculate to see results.</pre>
+
+      <div class="chart-box"><canvas id="sipChart"></canvas></div>
     </div>
   </section>
 
-  <!-- ============ EMI CALCULATOR ============ -->
-  <section class="calculator" id="emiCalc" aria-label="EMI Calculator">
-    <div class="calc-head"><h2>🏠 Home/Personal Loan EMI Calculator</h2></div>
+  <!-- EMI -->
+  <section id="emiCalc" class="calculator" aria-label="EMI Calculator">
+    <div class="calc-head"><h2>🏠 EMI Calculator</h2></div>
     <div class="calc-body">
-      <label>Loan Amount (₹)</label>
-      <input type="number" id="loanAmount" placeholder="e.g., 2500000" />
+      <div class="row">
+        <div class="col">
+          <label>Loan Amount (₹)</label>
+          <input id="loanAmount" type="number" placeholder="e.g., 2500000" />
+        </div>
+        <div class="col">
+          <label>Annual Interest Rate (%)</label>
+          <input id="loanRate" type="number" placeholder="e.g., 8.25" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label>Loan Tenure (Years)</label>
+          <input id="loanYears" type="number" placeholder="e.g., 20" />
+        </div>
+      </div>
 
-      <label>Annual Interest Rate (%)</label>
-      <input type="number" id="loanRate" placeholder="e.g., 8.25" />
-
-      <label>Loan Tenure (Years)</label>
-      <input type="number" id="loanYears" placeholder="e.g., 20" />
-
-      <button onclick="calculateEMI()">Calculate</button>
-      <pre id="emiResult">Enter values and click Calculate.</pre>
+      <div class="controls"><button class="calc-btn" onclick="calculateEMI()">Calculate EMI</button></div>
+      <pre id="emiResult" class="result">Click Calculate to see results.</pre>
     </div>
   </section>
 
-  <!-- ============ FD CALCULATOR ============ -->
-  <section class="calculator" id="fdCalc" aria-label="FD Calculator">
+  <!-- FD -->
+  <section id="fdCalc" class="calculator" aria-label="FD Calculator">
     <div class="calc-head"><h2>🏦 Fixed Deposit (FD) Calculator</h2></div>
     <div class="calc-body">
-      <label>Principal Amount (₹)</label>
-      <input type="number" id="fdPrincipal" placeholder="e.g., 100000" />
+      <div class="row">
+        <div class="col">
+          <label>Principal Amount (₹)</label>
+          <input id="fdPrincipal" type="number" placeholder="e.g., 100000" />
+        </div>
+        <div class="col">
+          <label>Annual Interest Rate (%)</label>
+          <input id="fdRate" type="number" placeholder="e.g., 7" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label>Time Period (Years)</label>
+          <input id="fdYears" type="number" placeholder="e.g., 5" />
+        </div>
+      </div>
 
-      <label>Annual Interest Rate (%)</label>
-      <input type="number" id="fdRate" placeholder="e.g., 7" />
+      <div class="controls"><button class="calc-btn" onclick="calculateFD()">Calculate FD</button></div>
+      <pre id="fdResult" class="result">Click Calculate to see results.</pre>
 
-      <label>Time Period (Years)</label>
-      <input type="number" id="fdYears" placeholder="e.g., 5" />
-
-      <button onclick="calculateFD()">Calculate</button>
-      <pre id="fdResult">Enter values and click Calculate.</pre>
+      <!-- small growth chart for FD -->
+      <div class="chart-box"><canvas id="fdChart"></canvas></div>
     </div>
   </section>
 
-  <!-- ============ RETIREMENT CALCULATOR ============ -->
-  <section class="calculator" id="retireCalc" aria-label="Retirement Calculator">
-    <div class="calc-head"><h2>🧓 Retirement Planning Calculator</h2></div>
+  <!-- Retirement -->
+  <section id="retireCalc" class="calculator" aria-label="Retirement Calculator">
+    <div class="calc-head"><h2>🧓 Retirement Calculator</h2></div>
     <div class="calc-body">
-      <label>Current Age</label>
-      <input type="number" id="currAge" placeholder="e.g., 28" />
-
-      <label>Retirement Age</label>
-      <input type="number" id="retireAge" placeholder="e.g., 60" />
-
+      <div class="row">
+        <div class="col">
+          <label>Current Age</label>
+          <input id="currAge" type="number" placeholder="e.g., 30" />
+        </div>
+        <div class="col">
+          <label>Retirement Age</label>
+          <input id="retireAge" type="number" placeholder="e.g., 60" />
+        </div>
+      </div>
       <label>Current Monthly Expenses (₹)</label>
-      <input type="number" id="expenses" placeholder="e.g., 40000" />
+      <input id="expenses" type="number" placeholder="e.g., 40000" />
+      <div class="row">
+        <div class="col">
+          <label style="color:var(--gold)">Expected Inflation (%)</label>
+          <input id="inflation" type="number" placeholder="e.g., 6" />
+        </div>
+        <div class="col">
+          <label>Expected Return After Retirement (%)</label>
+          <input id="returnRate" type="number" placeholder="e.g., 8" />
+        </div>
+      </div>
 
-      <label style="color:var(--gold)">Expected Inflation Rate (%)</label>
-      <input type="number" id="inflation" placeholder="e.g., 6" />
+      <div class="controls"><button class="calc-btn" onclick="calculateRetirement()">Calculate Retirement Need</button></div>
+      <pre id="retireResult" class="result">Click Calculate to see results.</pre>
 
-      <label>Expected Return on Investment After Retirement (%)</label>
-      <input type="number" id="returnRate" placeholder="e.g., 8" />
-
-      <button onclick="calculateRetirement()">Calculate</button>
-      <pre id="retireResult">Enter values and click Calculate.</pre>
+      <div class="chart-box"><canvas id="retireChart"></canvas></div>
     </div>
   </section>
 
-  <script>
-    // Utility: format as Indian Rupees with commas
-    const rupee = (n, d=0) =>
-      new Intl.NumberFormat('en-IN', {minimumFractionDigits:d, maximumFractionDigits:d}).format(n);
+  <!-- NPS -->
+  <section id="npsCalc" class="calculator" aria-label="NPS Calculator">
+    <div class="calc-head"><h2>💼 NPS (National Pension Scheme) Calculator</h2></div>
+    <div class="calc-body">
+      <div class="row">
+        <div class="col">
+          <label>Monthly Contribution (₹)</label>
+          <input id="npsMonthly" type="number" placeholder="e.g., 5000" />
+        </div>
+        <div class="col">
+          <label>Expected Annual Return (%)</label>
+          <input id="npsRate" type="number" placeholder="e.g., 10" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label>Contribution Period (Years)</label>
+          <input id="npsYears" type="number" placeholder="e.g., 30" />
+        </div>
+        <div class="col">
+          <label>Annuitization % at retirement (e.g., 60)</label>
+          <input id="npsAnnuitize" type="number" placeholder="Percent of corpus used to buy annuity" />
+        </div>
+      </div>
 
-    // Open calculator panel
+      <div class="controls"><button class="calc-btn" onclick="calculateNPS()">Calculate NPS</button></div>
+      <pre id="npsResult" class="result">Click Calculate to see results.</pre>
+
+      <div class="chart-box"><canvas id="npsChart"></canvas></div>
+    </div>
+  </section>
+
+  <!-- SWP -->
+  <section id="swpCalc" class="calculator" aria-label="SWP Calculator">
+    <div class="calc-head"><h2>🔁 SWP (Systematic Withdrawal Plan) Calculator</h2></div>
+    <div class="calc-body">
+      <div class="row">
+        <div class="col">
+          <label>Initial Investment (₹)</label>
+          <input id="swpInitial" type="number" placeholder="e.g., 2000000" />
+        </div>
+        <div class="col">
+          <label>Expected Annual Return (%)</label>
+          <input id="swpReturn" type="number" placeholder="e.g., 8" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label>Monthly SWP Withdrawal (₹)</label>
+          <input id="swpMonthly" type="number" placeholder="e.g., 20000" />
+        </div>
+        <div class="col">
+          <label>Period (Years)</label>
+          <input id="swpYears" type="number" placeholder="e.g., 10" />
+        </div>
+      </div>
+
+      <div class="controls"><button class="calc-btn" onclick="calculateSWP()">Calculate SWP</button></div>
+      <pre id="swpResult" class="result">Click Calculate to see results.</pre>
+      <div class="chart-box"><canvas id="swpChart"></canvas></div>
+    </div>
+  </section>
+
+  <!-- Inline JS: calculations + minimal canvas charts (no external libs) -->
+  <script>
+    // helper: format rupee with commas
+    function rupee(n, d=0){ return new Intl.NumberFormat('en-IN',{minimumFractionDigits:d, maximumFractionDigits:d}).format(n); }
+
     function openCalc(id){
-      document.querySelectorAll('.calculator').forEach(c => c.style.display='none');
-      document.getElementById(id).style.display='block';
-      // Auto-scroll to the opened calculator for better UX
-      document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+      document.querySelectorAll('.calculator').forEach(el => el.style.display='none');
+      const el = document.getElementById(id);
+      if(el) { el.style.display='block'; el.scrollIntoView({behavior:'smooth', block:'start'}); }
     }
 
     // ---------- SIP ----------
@@ -233,50 +288,32 @@
       const annual = parseFloat(document.getElementById('sipRate').value);
       const years = parseFloat(document.getElementById('sipYears').value);
       const infl = parseFloat(document.getElementById('sipInflation').value) || 0;
+      const out = document.getElementById('sipResult');
+      if(!P || !annual || !years){ out.textContent='Please enter monthly, annual return and years.'; clearCanvas('sipChart'); return; }
 
-      const r = (annual/100)/12;           // monthly return
-      const i = (infl/100)/12;             // monthly inflation
-
-      if(!P || !annual || !years){
-        document.getElementById('sipResult').textContent = "Please enter Monthly, Annual Return and Years.";
-        clearChart('sipChart');
-        return;
-      }
-
+      const r = annual/100/12;
       const n = Math.round(years*12);
-
-      // Future value (nominal)
-      const FV = P * ((Math.pow(1+r, n) - 1) / r) * (1 + r);
-
-      // Inflation-adjusted monthly real rate
-      const rReal = ((1 + r) / (1 + i)) - 1;
-      // Handle near-zero rate to avoid division by zero
-      const FVreal = Math.abs(rReal) < 1e-10
-        ? P * n
-        : P * ((Math.pow(1 + rReal, n) - 1) / rReal) * (1 + rReal);
-
       const invested = P * n;
+      const FV = P * ((Math.pow(1+r,n)-1)/r) * (1+r);
 
-      document.getElementById('sipResult').textContent =
-        `Invested: ₹${rupee(invested)}\n` +
-        `Future Value (Nominal): ₹${rupee(FV)}\n` +
-        `Inflation-Adjusted Value: ₹${rupee(FVreal)}`;
+      // real monthly rate due to inflation
+      const i = infl/100/12;
+      const rReal = ((1 + r) / (1 + i)) - 1;
+      const FVreal = Math.abs(rReal) < 1e-12 ? P*n : P * ((Math.pow(1+rReal,n)-1)/rReal) * (1+rReal);
 
-      // Year-wise arrays
-      const labels = [];
-      const nominal = [];
-      const real = [];
-      for(let y=1; y<=years; y++){
+      out.textContent = `Invested: ₹${rupee(invested)}\nFuture Value (Nominal): ₹${rupee(FV,2)}\nInflation-adjusted: ₹${rupee(FVreal,2)}`;
+
+      // build yearly arrays
+      const labels = [], nominal = [], real = [];
+      for(let y=1;y<=years;y++){
         const m = y*12;
-        const fvY  = P*((Math.pow(1+r, m)-1)/r)*(1+r);
-        const fvYR = Math.abs(rReal) < 1e-10
-          ? P*m
-          : P*((Math.pow(1+rReal, m)-1)/rReal)*(1+rReal);
+        const fvY = P * ((Math.pow(1+r,m)-1)/r) * (1+r);
+        const fvYR = Math.abs(rReal) < 1e-12 ? P*m : P * ((Math.pow(1+rReal,m)-1)/rReal) * (1+rReal);
         labels.push(String(y));
         nominal.push(fvY);
         real.push(fvYR);
       }
-      drawChart('sipChart', labels, nominal, real, getCSS('--green'), getCSS('--gold'));
+      drawLineChart('sipChart', labels, nominal, real, '#10b981', '#d4af37');
     }
 
     // ---------- EMI ----------
@@ -284,38 +321,30 @@
       const P = parseFloat(document.getElementById('loanAmount').value);
       const annual = parseFloat(document.getElementById('loanRate').value);
       const years = parseFloat(document.getElementById('loanYears').value);
-
-      if(!P || !annual || !years){
-        document.getElementById('emiResult').textContent = "Please enter Loan Amount, Rate and Years.";
-        return;
-      }
-      const r = (annual/100)/12;
+      const out = document.getElementById('emiResult');
+      if(!P || !annual || !years){ out.textContent='Please enter loan amount, rate and years.'; return; }
+      const r = annual/100/12;
       const n = years*12;
       const EMI = (P*r*Math.pow(1+r,n)) / (Math.pow(1+r,n)-1);
       const total = EMI*n;
       const interest = total - P;
-
-      document.getElementById('emiResult').textContent =
-        `Monthly EMI: ₹${rupee(EMI,2)}\n` +
-        `Total Interest: ₹${rupee(interest,2)}\n` +
-        `Total Payment: ₹${rupee(total,2)}`;
+      out.textContent = `Monthly EMI: ₹${rupee(EMI,2)}\nTotal Interest: ₹${rupee(interest,2)}\nTotal Payment: ₹${rupee(total,2)}`;
     }
 
     // ---------- FD ----------
     function calculateFD(){
       const P = parseFloat(document.getElementById('fdPrincipal').value);
-      const annual = parseFloat(document.getElementById('fdRate').value);
+      const rate = parseFloat(document.getElementById('fdRate').value);
       const years = parseFloat(document.getElementById('fdYears').value);
-
-      if(!P || !annual || !years){
-        document.getElementById('fdResult').textContent = "Please enter Principal, Rate and Years.";
-        return;
-      }
-      const A = P*Math.pow(1+annual/100, years);
+      const out = document.getElementById('fdResult');
+      if(!P || !rate || !years){ out.textContent='Please enter principal, rate and years.'; clearCanvas('fdChart'); return; }
+      const A = P * Math.pow(1 + rate/100, years);
       const interest = A - P;
-      document.getElementById('fdResult').textContent =
-        `Maturity Amount: ₹${rupee(A,2)}\n` +
-        `Interest Earned: ₹${rupee(interest,2)}`;
+      out.textContent = `Maturity Amount: ₹${rupee(A,2)}\nInterest Earned: ₹${rupee(interest,2)}`;
+      // simple year-wise
+      const labels=[], vals=[];
+      for(let y=1;y<=years;y++){ labels.push(String(y)); vals.push(P*Math.pow(1+rate/100,y)); }
+      drawLineOnly('fdChart', labels, vals, '#0b72b9');
     }
 
     // ---------- Retirement ----------
@@ -324,149 +353,173 @@
       const retire = parseFloat(document.getElementById('retireAge').value);
       const exp = parseFloat(document.getElementById('expenses').value);
       const infl = parseFloat(document.getElementById('inflation').value)/100;
-      const ret  = parseFloat(document.getElementById('returnRate').value)/100;
-
-      if(!curr || !retire || !exp || isNaN(infl) || isNaN(ret)){
-        document.getElementById('retireResult').textContent = "Please enter all values.";
-        return;
-      }
+      const ret = parseFloat(document.getElementById('returnRate').value)/100;
+      const out = document.getElementById('retireResult');
+      if(!curr || !retire || !exp || isNaN(infl) || isNaN(ret)){ out.textContent='Please enter all values.'; clearCanvas('retireChart'); return; }
       const years = retire - curr;
       const futureExp = exp * Math.pow(1+infl, years);
-      const corpus = (futureExp*12)/ret; // simple rule of thumb
-
-      document.getElementById('retireResult').textContent =
-        `Monthly Need at Retirement: ₹${rupee(futureExp,2)}\n` +
-        `Estimated Corpus Required: ₹${rupee(corpus,2)}`;
+      // corpus: PV of annuity at post-retirement return rate (simplified)
+      const corpus = (futureExp*12) / ret;
+      out.textContent = `Monthly need at retirement: ₹${rupee(futureExp,2)}\nEstimated corpus required: ₹${rupee(corpus,2)}`;
+      // show yearwise expense growth till retirement
+      const labels=[], vals=[];
+      for(let y=1;y<=years;y++){ labels.push(String(curr+y)); vals.push(exp*Math.pow(1+infl,y)); }
+      drawLineOnly('retireChart', labels, vals, '#d4af37');
     }
 
-    // ---------- Chart Utilities (pure canvas, no libs) ----------
-    function getCSS(varName){ return getComputedStyle(document.documentElement).getPropertyValue(varName).trim(); }
+    // ---------- NPS ----------
+    function calculateNPS(){
+      const monthly = parseFloat(document.getElementById('npsMonthly').value);
+      const annual = parseFloat(document.getElementById('npsRate').value);
+      const years = parseFloat(document.getElementById('npsYears').value);
+      const annPct = parseFloat(document.getElementById('npsAnnuitize').value) / 100 || 0.6; // default 60%
+      const out = document.getElementById('npsResult');
+      if(!monthly || !annual || !years){ out.textContent='Please enter monthly, rate and years.'; clearCanvas('npsChart'); return; }
+      const r = annual/100/12;
+      const n = years*12;
+      const corpus = monthly * ((Math.pow(1+r,n)-1)/r) * (1+r);
+      const annuitized = corpus * (annPct); // portion used to buy annuity
+      // estimate annual pension assuming annuity yield 6% (example)
+      const annuityYield = 0.06;
+      const annualPension = annuitized * annuityYield;
+      out.textContent = `Estimated NPS Corpus: ₹${rupee(corpus,2)}\nPortion for Annuity (${(annPct*100).toFixed(0)}%): ₹${rupee(annuitized,2)}\nEstimated Annual Pension: ₹${rupee(annualPension,2)} (approx)`;
+      // yearwise
+      const labels=[], vals=[];
+      for(let y=1;y<=years;y++){ const m=y*12; labels.push(String(y)); vals.push(monthly * ((Math.pow(1+r,m)-1)/r) * (1+r)); }
+      drawLineOnly('npsChart', labels, vals, '#10b981');
+    }
 
-    function clearChart(id){
+    // ---------- SWP ----------
+    function calculateSWP(){
+      const initial = parseFloat(document.getElementById('swpInitial').value);
+      const annual = parseFloat(document.getElementById('swpReturn').value);
+      const monthlySWP = parseFloat(document.getElementById('swpMonthly').value);
+      const years = parseFloat(document.getElementById('swpYears').value);
+      const out = document.getElementById('swpResult');
+      if(!initial || !annual || !monthlySWP || !years){ out.textContent='Please enter all values.'; clearCanvas('swpChart'); return; }
+      const r = annual/100/12;
+      const n = years*12;
+      let balance = initial;
+      let totalWithdrawn = 0;
+      const labels=[], balances=[];
+      for(let m=1;m<=n;m++){
+        // growth
+        balance = balance * (1 + r);
+        // withdrawal
+        balance = balance - monthlySWP;
+        totalWithdrawn += monthlySWP;
+        // ensure not negative
+        if(balance < 0){ balance = 0; }
+        if(m%12===0){ labels.push(String(m/12)); balances.push(balance); }
+      }
+      out.textContent = `Final Balance after ${years} years: ₹${rupee(balance,2)}\nTotal Withdrawn: ₹${rupee(totalWithdrawn,2)}`;
+      drawLineOnly('swpChart', labels, balances, '#0b72b9');
+    }
+
+    // ---------- Simple Canvas Line Chart (pure JS) ----------
+    function clearCanvas(id){
       const c = document.getElementById(id);
+      if(!c) return;
       const ctx = c.getContext('2d');
       ctx.clearRect(0,0,c.width,c.height);
     }
 
-    function drawChart(id, labels, dataA, dataB, colorA, colorB){
+    // draw both lines: dataA (green), dataB (gold)
+    function drawLineChart(id, labels, dataA, dataB, colorA, colorB){
       const c = document.getElementById(id);
+      if(!c) return;
       const ctx = c.getContext('2d');
       ctx.clearRect(0,0,c.width,c.height);
-
       const W = c.width, H = c.height;
-      const m = {left:60, right:18, top:18, bottom:40};
-      const CW = W - m.left - m.right;
-      const CH = H - m.top - m.bottom;
-
-      // find max
+      const pad = {l:60,r:20,t:20,b:40};
+      const CW = W - pad.l - pad.r, CH = H - pad.t - pad.b;
+      // max
       const maxVal = Math.max(...dataA, ...dataB);
-      const nice = niceScale(0, maxVal, 6); // ticks ~6
-
-      // background
-      ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0,0,W,H);
-
-      // axes
-      ctx.strokeStyle = "#cbd5e1";
-      ctx.lineWidth = 1;
-
-      // horizontal grid + y labels
-      ctx.font = "12px Arial";
-      ctx.fillStyle = "#475569";
-      for(let y=nice.min; y<=nice.max+1e-9; y+=nice.step){
-        const yy = m.top + CH - ( (y - nice.min) / (nice.max - nice.min) ) * CH;
-        ctx.beginPath();
-        ctx.moveTo(m.left, yy);
-        ctx.lineTo(m.left+CW, yy);
-        ctx.stroke();
-        ctx.fillText("₹"+shorten(y), 8, yy+4);
+      const minVal = 0;
+      // y ticks
+      const ticks = 5;
+      ctx.font = '12px Arial';
+      ctx.fillStyle = '#475569';
+      ctx.strokeStyle = '#e6eef8';
+      for(let i=0;i<=ticks;i++){
+        const yVal = minVal + (i*(maxVal-minVal)/ticks);
+        const y = pad.t + CH - (i*(CH/ticks));
+        ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(pad.l+CW, y); ctx.stroke();
+        ctx.fillStyle = '#475569'; ctx.textAlign = 'left';
+        ctx.fillText(rupee(yVal,0), 8, y+4);
       }
-
-      // x axis + year labels
+      // x labels
       const N = labels.length;
-      const xStep = Math.max(1, Math.ceil(N/10)); // show ~10 ticks
-      ctx.strokeStyle = "#94a3b8";
-      ctx.beginPath();
-      ctx.moveTo(m.left, m.top+CH);
-      ctx.lineTo(m.left+CW, m.top+CH);
-      ctx.stroke();
-      ctx.fillStyle = "#475569";
-      for(let i=0;i<N;i+=xStep){
-        const x = m.left + (i/(N-1))*CW;
-        ctx.fillText(labels[i], x-4, H-10);
-        ctx.beginPath();
-        ctx.moveTo(x, m.top+CH-3);
-        ctx.lineTo(x, m.top+CH+3);
-        ctx.stroke();
+      ctx.fillStyle = '#475569'; ctx.textAlign='center';
+      for(let i=0;i<N;i++){
+        const x = pad.l + (i/(N-1))*CW;
+        ctx.fillText(labels[i], x, H - 12);
       }
-      // last label if not aligned
-      if((N-1)%xStep!==0){
-        const x = m.left + ((N-1)/(N-1))*CW;
-        ctx.fillText(labels[N-1], x-4, H-10);
-      }
-
-      // plot function
-      function plot(data, color){
-        ctx.beginPath();
-        ctx.lineWidth = 2;
-        ctx.strokeStyle = color;
-        data.forEach((v, i) => {
-          const x = m.left + (i/(N-1))*CW;
-          const y = m.top + CH - ((v - nice.min)/(nice.max - nice.min))*CH;
+      // function to plot
+      function plot(data, col){
+        ctx.beginPath(); ctx.lineWidth = 2; ctx.strokeStyle = col;
+        for(let i=0;i<data.length;i++){
+          const x = pad.l + (i/(N-1))*CW;
+          const y = pad.t + CH - ((data[i]-minVal)/(maxVal-minVal))*CH;
           if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
-        });
+        }
         ctx.stroke();
       }
-
-      plot(dataA, colorA); // nominal (green)
-      plot(dataB, colorB); // real (gold)
-
+      plot(dataA, colorA); plot(dataB, colorB);
       // legend
-      const lx = W - 190, ly = 16;
-      ctx.fillStyle = colorA; ctx.fillRect(lx, ly, 12, 12);
-      ctx.fillStyle = "#1f2937"; ctx.fillText("Nominal (No inflation)", lx+18, ly+10);
-      ctx.fillStyle = colorB; ctx.fillRect(lx, ly+18, 12, 12);
-      ctx.fillStyle = "#1f2937"; ctx.fillText("Inflation-adjusted", lx+18, ly+28);
+      ctx.fillStyle = colorA; ctx.fillRect(W-250, 14, 12, 10);
+      ctx.fillStyle = '#0b1720'; ctx.fillText('Nominal (no inflation)', W-232, 24);
+      ctx.fillStyle = colorB; ctx.fillRect(W-250, 34, 12, 10);
+      ctx.fillStyle = '#0b1720'; ctx.fillText('Inflation-adjusted', W-232, 44);
     }
 
-    // Nice scale for Y axis (pretty ticks)
-    function niceScale(min, max, ticks){
-      const range = niceNum(max - min, false);
-      const step = niceNum(range / (ticks - 1), true);
-      const nmin = Math.floor(min / step) * step;
-      const nmax = Math.ceil(max / step) * step;
-      return {min:nmin, max:nmax, step:step};
-    }
-    function niceNum(range, round){
-      const exp = Math.floor(Math.log10(range));
-      const f = range / Math.pow(10, exp);
-      let nf;
-      if(round){
-        if(f < 1.5) nf = 1;
-        else if(f < 3) nf = 2;
-        else if(f < 7) nf = 5;
-        else nf = 10;
-      }else{
-        if(f <= 1) nf = 1;
-        else if(f <= 2) nf = 2;
-        else if(f <= 5) nf = 5;
-        else nf = 10;
+    // simple single-line chart for FD/NPS/retire/SWP
+    function drawLineOnly(id, labels, data, color){
+      const c = document.getElementById(id);
+      if(!c) return;
+      const ctx = c.getContext('2d'); ctx.clearRect(0,0,c.width,c.height);
+      const W = c.width, H = c.height; const pad={l:60,r:20,t:20,b:40}; const CW=W-pad.l-pad.r; const CH=H-pad.t-pad.b;
+      const maxVal = Math.max(...data); const minVal = 0; const N = labels.length;
+      ctx.font='12px Arial'; ctx.fillStyle='#475569';
+      // y grid
+      const ticks=4;
+      ctx.strokeStyle='#e6eef8';
+      for(let i=0;i<=ticks;i++){
+        const y=pad.t+CH-(i*(CH/ticks)); ctx.beginPath(); ctx.moveTo(pad.l,y); ctx.lineTo(pad.l+CW,y); ctx.stroke();
+        const val = Math.round(minVal + (i*(maxVal-minVal)/ticks));
+        ctx.fillText(rupee(val,0), 8, y+4);
       }
-      return nf * Math.pow(10, exp);
-    }
-    function shorten(n){
-      if(n>=1e7) return rupee(n/1e7,2)+' Cr';
-      if(n>=1e5) return rupee(n/1e5,2)+' L';
-      if(n>=1e3) return rupee(n/1e3,2)+' K';
-      return rupee(n,0);
+      // x labels
+      ctx.textAlign='center';
+      for(let i=0;i<N;i++){
+        const x=pad.l + (i/(N-1))*CW; ctx.fillText(labels[i], x, H-12);
+      }
+      // plot
+      ctx.beginPath(); ctx.lineWidth=2; ctx.strokeStyle=color;
+      for(let i=0;i<data.length;i++){
+        const x=pad.l + (i/(N-1))*CW;
+        const y=pad.t + CH - ((data[i]-minVal)/(maxVal-minVal))*CH;
+        if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+      }
+      ctx.stroke();
     }
 
-    // Ensure SIP visible on load (already via CSS), but call once to clear chart.
-    window.addEventListener('DOMContentLoaded', () => {
-      // leave panel open, but no auto calculation—keeps page non-blank
-      clearChart('sipChart');
-    });
+    // Ensure canvas sizes correspond to CSS width (important on hi-dpi screens)
+    function fixCanvasSizes(){
+      document.querySelectorAll('canvas').forEach(c => {
+        const cssW = c.clientWidth;
+        const cssH = c.clientHeight;
+        if(c.width !== cssW* (window.devicePixelRatio||1)) { c.width = Math.floor(cssW*(window.devicePixelRatio||1)); c.height = Math.floor(cssH*(window.devicePixelRatio||1)); const ctx=c.getContext('2d'); ctx.setTransform(window.devicePixelRatio||1,0,0,window.devicePixelRatio||1,0,0); }
+      });
+    }
+    window.addEventListener('resize', fixCanvasSizes);
+    window.addEventListener('load', () => { fixCanvasSizes(); clearAllCharts(); });
+
+    function clearAllCharts(){ ['sipChart','fdChart','retireChart','npsChart','swpChart'].forEach(id => clearCanvas(id)); }
   </script>
+</body>
+</html>
+
 </body>
 </html>
 
