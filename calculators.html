@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SIP, EMI & FD Calculator - BachatVikas</title>
+  <title>SIP, EMI, FD & Retirement Calculator - BachatVikas</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Use free financial calculators on BachatVikas. Calculate SIP returns, EMI payments, and FD maturity instantly. Plan your money smartly with our tools.">
-  <meta name="keywords" content="SIP Calculator, EMI Calculator, FD Calculator, Mutual Fund Calculator, Loan Calculator, Investment Tools, BachatVikas">
+  <meta name="description" content="Use free financial calculators on BachatVikas. Calculate SIP returns, EMI payments, FD maturity and Retirement needs instantly.">
+  <meta name="keywords" content="SIP Calculator, EMI Calculator, FD Calculator, Retirement Calculator, Mutual Fund Calculator, Loan Calculator, Investment Tools, BachatVikas">
   <meta name="author" content="BachatVikas">
 
-  <!-- Open Graph (Social Media Sharing) -->
-  <meta property="og:title" content="Free SIP, EMI & FD Calculators - BachatVikas">
-  <meta property="og:description" content="Plan your financial growth with free SIP, EMI, and FD calculators on BachatVikas.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free SIP, EMI, FD & Retirement Calculators - BachatVikas">
+  <meta property="og:description" content="Plan your financial growth with free calculators on BachatVikas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yourdomain.com/calculators.html">
   <meta property="og:image" content="https://yourdomain.com/favicon-512x512.png">
@@ -20,114 +20,28 @@
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- Icons -->
+  <!-- Icons + Chart.js -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      margin: 0; 
-      padding: 0; 
-      background: #f4f8fb; 
-    }
-
-    header {
-      background: #0077b6;
-      padding: 1rem;
-      text-align: center;
-      color: white;
-      font-size: 1.3rem;
-      font-weight: bold;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-
-    .tab-container { 
-      width: 95%; 
-      max-width: 750px; 
-      margin: 2rem auto; 
-    }
-
-    .tabs { 
-      display: flex; 
-      justify-content: space-around; 
-      cursor: pointer; 
-      background: #0077b6; 
-      color: white; 
-      border-radius: 8px; 
-      overflow: hidden;
-    }
-
-    .tab { 
-      padding: 1rem; 
-      flex: 1; 
-      text-align: center; 
-      transition: background 0.3s;
-    }
-
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f8fb; }
+    header { background: #0077b6; padding: 1rem; text-align: center; color: white; font-size: 1.3rem; font-weight: bold; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+    header a { color: white; text-decoration: none; font-size: 1.2rem; }
+    .tab-container { width: 95%; max-width: 800px; margin: 2rem auto; }
+    .tabs { display: flex; justify-content: space-around; cursor: pointer; background: #0077b6; color: white; border-radius: 8px; overflow: hidden; }
+    .tab { padding: 1rem; flex: 1; text-align: center; transition: background 0.3s; }
     .tab:hover { background: #006299; }
     .tab.active { background: #005f8a; font-weight: bold; }
-
-    .tab-content { 
-      background: white; 
-      padding: 1.5rem; 
-      border-radius: 10px; 
-      margin-top: 1rem; 
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-      transition: transform 0.2s; 
-    }
-
+    .tab-content { background: white; padding: 1.5rem; border-radius: 10px; margin-top: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.2s; }
     .tab-content:hover { transform: scale(1.01); }
-
-    h2 {
-      margin-top: 0;
-      color: #0077b6;
-      font-size: 1.4rem;
-    }
-
-    label { 
-      display: block; 
-      margin: 10px 0 5px; 
-      font-weight: bold;
-    }
-
-    input { 
-      width: 100%; 
-      padding: 10px; 
-      margin-bottom: 15px; 
-      border: 1px solid #ccc; 
-      border-radius: 6px; 
-    }
-
-    button { 
-      background: #0077b6; 
-      color: white; 
-      padding: 12px 18px; 
-      border: none; 
-      border-radius: 8px; 
-      cursor: pointer; 
-      font-size: 1rem; 
-      transition: background 0.3s; 
-    }
-
+    h2 { margin-top: 0; color: #0077b6; font-size: 1.4rem; }
+    label { display: block; margin: 10px 0 5px; font-weight: bold; }
+    input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; }
+    button { background: #0077b6; color: white; padding: 12px 18px; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; transition: background 0.3s; }
     button:hover { background: #005f8a; }
-
-    .result { 
-      margin-top: 1rem; 
-      font-weight: bold; 
-      color: #0077b6; 
-      white-space: pre-line; /* line break support */
-    }
+    .result { margin-top: 1rem; font-weight: bold; color: #0077b6; white-space: pre-line; }
+    canvas { margin-top: 1rem; max-height: 300px; }
   </style>
 </head>
 <body>
@@ -143,6 +57,7 @@
       <div class="tab active" onclick="openTab('sip')">SIP Calculator</div>
       <div class="tab" onclick="openTab('emi')">EMI Calculator</div>
       <div class="tab" onclick="openTab('fd')">FD Calculator</div>
+      <div class="tab" onclick="openTab('retirement')">Retirement Calculator</div>
     </div>
 
     <!-- SIP Calculator -->
@@ -150,18 +65,15 @@
       <h2>SIP Calculator</h2>
       <label>Monthly Investment (₹):</label>
       <input type="number" id="sipAmount">
-
       <label>Expected Return Rate (% per year):</label>
       <input type="number" id="sipRate">
-
       <label>Time Period (Years):</label>
       <input type="number" id="sipYears">
-
       <label>Expected Inflation Rate (% per year) <small>(optional)</small>:</label>
       <input type="number" id="sipInflation" placeholder="Leave empty if not sure">
-
       <button onclick="calculateSIP()">Calculate</button>
       <div class="result" id="sipResult"></div>
+      <canvas id="sipChart"></canvas>
     </div>
 
     <!-- EMI Calculator -->
@@ -189,6 +101,25 @@
       <button onclick="calculateFD()">Calculate</button>
       <div class="result" id="fdResult"></div>
     </div>
+
+    <!-- Retirement Calculator -->
+    <div id="retirement" class="tab-content" style="display:none;">
+      <h2>Retirement Calculator</h2>
+      <label>Current Monthly Expense (₹):</label>
+      <input type="number" id="retExpense">
+      <label>Current Age:</label>
+      <input type="number" id="currentAge">
+      <label>Retirement Age:</label>
+      <input type="number" id="retAge">
+      <label>Life Expectancy (Years):</label>
+      <input type="number" id="lifeExpectancy">
+      <label>Expected Inflation Rate (%):</label>
+      <input type="number" id="retInflation">
+      <label>Expected Return Rate (% during retirement):</label>
+      <input type="number" id="retReturn">
+      <button onclick="calculateRetirement()">Calculate</button>
+      <div class="result" id="retirementResult"></div>
+    </div>
   </div>
 
   <script>
@@ -198,6 +129,9 @@
       document.getElementById(tabId).style.display = 'block';
       event.target.classList.add('active');
     }
+
+    // Global Chart object
+    let sipChartObj = null;
 
     function calculateSIP() {
       let P = parseFloat(document.getElementById('sipAmount').value);
@@ -210,19 +144,44 @@
         return;
       }
 
-      // Normal maturity calculation
+      // SIP Maturity
       let M = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
-
       let resultText = "Maturity Amount: ₹" + M.toFixed(2);
 
-      // Inflation-adjusted value (if inflation given)
+      let realValue = null;
       if (!isNaN(inflation) && inflation > 0) {
         let inflationRate = inflation / 100;
-        let realValue = M / Math.pow(1 + inflationRate, n / 12); // Adjust for years
+        realValue = M / Math.pow(1 + inflationRate, n / 12);
         resultText += "\nInflation Adjusted Value: ₹" + realValue.toFixed(2);
       }
-
       document.getElementById('sipResult').innerText = resultText;
+
+      // Chart data
+      let yearly = [];
+      let labels = [];
+      for (let year = 1; year <= n/12; year++) {
+        let months = year * 12;
+        let value = P * ((Math.pow(1 + r, months) - 1) / r) * (1 + r);
+        let adjValue = (!isNaN(inflation) && inflation > 0) ? value / Math.pow(1 + inflation/100, year) : null;
+        yearly.push({year, value, adjValue});
+        labels.push("Year " + year);
+      }
+
+      // Destroy old chart
+      if (sipChartObj) sipChartObj.destroy();
+
+      // Draw Chart
+      sipChartObj = new Chart(document.getElementById("sipChart"), {
+        type: "line",
+        data: {
+          labels: labels,
+          datasets: [
+            { label: "SIP Value", data: yearly.map(y=>y.value), borderColor: "blue", fill:false },
+            { label: "Inflation Adjusted", data: yearly.map(y=>y.adjValue), borderColor: "red", fill:false }
+          ]
+        },
+        options: { responsive: true, plugins: { legend: { position: "bottom" } } }
+      });
     }
 
     function calculateEMI() {
@@ -251,6 +210,34 @@
 
       let A = P * Math.pow((1 + r), n);
       document.getElementById('fdResult').innerText = "Maturity Amount: ₹" + A.toFixed(2);
+    }
+
+    function calculateRetirement() {
+      let expense = parseFloat(document.getElementById('retExpense').value);
+      let currentAge = parseInt(document.getElementById('currentAge').value);
+      let retAge = parseInt(document.getElementById('retAge').value);
+      let life = parseInt(document.getElementById('lifeExpectancy').value);
+      let inflation = parseFloat(document.getElementById('retInflation').value)/100;
+      let returnRate = parseFloat(document.getElementById('retReturn').value)/100;
+
+      if (isNaN(expense) || isNaN(currentAge) || isNaN(retAge) || isNaN(life) || isNaN(inflation) || isNaN(returnRate)) {
+        document.getElementById('retirementResult').innerText = "⚠️ Please fill all fields.";
+        return;
+      }
+
+      let yearsToRetire = retAge - currentAge;
+      let yearsPost = life - retAge;
+
+      // Inflate expense till retirement
+      let futureExpense = expense * Math.pow(1+inflation, yearsToRetire);
+      let annualExpense = futureExpense * 12;
+
+      // Retirement Corpus using PV of annuity formula
+      let corpus = annualExpense * ((1 - Math.pow(1+returnRate, -yearsPost)) / returnRate);
+
+      document.getElementById('retirementResult').innerText = 
+        "Future Monthly Expense at Retirement: ₹" + futureExpense.toFixed(2) +
+        "\nTotal Retirement Corpus Needed: ₹" + corpus.toFixed(2);
     }
   </script>
 
