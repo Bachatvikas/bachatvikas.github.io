@@ -20,21 +20,123 @@
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f8fb; }
-    .tab-container { width: 90%; max-width: 700px; margin: 2rem auto; }
-    .tabs { display: flex; justify-content: space-around; cursor: pointer; background: #0077b6; color: white; border-radius: 5px; }
-    .tab { padding: 1rem; flex: 1; text-align: center; }
-    .tab.active { background: #005f8a; }
-    .tab-content { background: white; padding: 1.5rem; border-radius: 5px; margin-top: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    label { display: block; margin: 10px 0 5px; }
-    input { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
-    button { background: #0077b6; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; }
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      background: #f4f8fb; 
+    }
+
+    header {
+      background: #0077b6;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-size: 1.3rem;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .tab-container { 
+      width: 95%; 
+      max-width: 750px; 
+      margin: 2rem auto; 
+    }
+
+    .tabs { 
+      display: flex; 
+      justify-content: space-around; 
+      cursor: pointer; 
+      background: #0077b6; 
+      color: white; 
+      border-radius: 8px; 
+      overflow: hidden;
+    }
+
+    .tab { 
+      padding: 1rem; 
+      flex: 1; 
+      text-align: center; 
+      transition: background 0.3s;
+    }
+
+    .tab:hover { background: #006299; }
+    .tab.active { background: #005f8a; font-weight: bold; }
+
+    .tab-content { 
+      background: white; 
+      padding: 1.5rem; 
+      border-radius: 10px; 
+      margin-top: 1rem; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+      transition: transform 0.2s; 
+    }
+
+    .tab-content:hover { transform: scale(1.01); }
+
+    h2 {
+      margin-top: 0;
+      color: #0077b6;
+      font-size: 1.4rem;
+    }
+
+    label { 
+      display: block; 
+      margin: 10px 0 5px; 
+      font-weight: bold;
+    }
+
+    input { 
+      width: 100%; 
+      padding: 10px; 
+      margin-bottom: 15px; 
+      border: 1px solid #ccc; 
+      border-radius: 6px; 
+    }
+
+    button { 
+      background: #0077b6; 
+      color: white; 
+      padding: 12px 18px; 
+      border: none; 
+      border-radius: 8px; 
+      cursor: pointer; 
+      font-size: 1rem; 
+      transition: background 0.3s; 
+    }
+
     button:hover { background: #005f8a; }
-    .result { margin-top: 1rem; font-weight: bold; color: #0077b6; }
+
+    .result { 
+      margin-top: 1rem; 
+      font-weight: bold; 
+      color: #0077b6; 
+      white-space: pre-line; /* line break support */
+    }
   </style>
 </head>
 <body>
+
+  <header>
+    <a href="index.html"><i class="fa fa-home"></i> Home</a>
+    <span><i class="fa fa-calculator"></i> Financial Calculators</span>
+    <span></span>
+  </header>
 
   <div class="tab-container">
     <div class="tabs">
@@ -48,10 +150,16 @@
       <h2>SIP Calculator</h2>
       <label>Monthly Investment (₹):</label>
       <input type="number" id="sipAmount">
+
       <label>Expected Return Rate (% per year):</label>
       <input type="number" id="sipRate">
+
       <label>Time Period (Years):</label>
       <input type="number" id="sipYears">
+
+      <label>Expected Inflation Rate (% per year) <small>(optional)</small>:</label>
+      <input type="number" id="sipInflation" placeholder="Leave empty if not sure">
+
       <button onclick="calculateSIP()">Calculate</button>
       <div class="result" id="sipResult"></div>
     </div>
@@ -95,14 +203,38 @@
       let P = parseFloat(document.getElementById('sipAmount').value);
       let r = parseFloat(document.getElementById('sipRate').value) / 100 / 12;
       let n = parseFloat(document.getElementById('sipYears').value) * 12;
+      let inflation = parseFloat(document.getElementById('sipInflation').value);
+
+      if (isNaN(P) || isNaN(r) || isNaN(n)) {
+        document.getElementById('sipResult').innerText = "⚠️ Please fill all fields.";
+        return;
+      }
+
+      // Normal maturity calculation
       let M = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
-      document.getElementById('sipResult').innerText = "Maturity Amount: ₹" + M.toFixed(2);
+
+      let resultText = "Maturity Amount: ₹" + M.toFixed(2);
+
+      // Inflation-adjusted value (if inflation given)
+      if (!isNaN(inflation) && inflation > 0) {
+        let inflationRate = inflation / 100;
+        let realValue = M / Math.pow(1 + inflationRate, n / 12); // Adjust for years
+        resultText += "\nInflation Adjusted Value: ₹" + realValue.toFixed(2);
+      }
+
+      document.getElementById('sipResult').innerText = resultText;
     }
 
     function calculateEMI() {
       let P = parseFloat(document.getElementById('loanAmount').value);
       let r = parseFloat(document.getElementById('loanRate').value) / 100 / 12;
       let n = parseFloat(document.getElementById('loanYears').value) * 12;
+
+      if (isNaN(P) || isNaN(r) || isNaN(n)) {
+        document.getElementById('emiResult').innerText = "⚠️ Please fill all fields.";
+        return;
+      }
+
       let EMI = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
       document.getElementById('emiResult').innerText = "Monthly EMI: ₹" + EMI.toFixed(2);
     }
@@ -111,6 +243,12 @@
       let P = parseFloat(document.getElementById('fdPrincipal').value);
       let r = parseFloat(document.getElementById('fdRate').value) / 100;
       let n = parseFloat(document.getElementById('fdYears').value);
+
+      if (isNaN(P) || isNaN(r) || isNaN(n)) {
+        document.getElementById('fdResult').innerText = "⚠️ Please fill all fields.";
+        return;
+      }
+
       let A = P * Math.pow((1 + r), n);
       document.getElementById('fdResult').innerText = "Maturity Amount: ₹" + A.toFixed(2);
     }
