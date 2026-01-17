@@ -3,42 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About BachatVikas | Smart savings. Secure future.</title>
-  <meta name="description" content="BachatVikas helps families make smarter financial decisions through financial literacy, mutual fund distribution, and insurance services—focused on first-time investors and households." />
+  <title>About BachatVikas | Smart savings. Long-term security.</title>
+  <meta name="description" content="BachatVikas helps individuals and families make informed financial decisions through financial literacy, mutual fund distribution, and insurance guidance." />
 
-  <!-- Favicon (kept) -->
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- Open Graph (kept) -->
   <meta property="og:title" content="About BachatVikas" />
-  <meta property="og:description" content="Smart savings. Secure future. Financial literacy, investments, and insurance—made simple and accessible." />
+  <meta property="og:description" content="Smart savings. Long-term security. Financial education and guidance made simple." />
   <meta property="og:url" content="https://bachatvikas.in/about" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://bachatvikas.in/logo.jpeg" />
 
-  <!-- Extra SEO (added) -->
   <link rel="canonical" href="https://bachatvikas.in/about" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="BachatVikas" />
-  <meta name="keywords" content="BachatVikas, Mutual Fund Distributor, SEBI Registered, Financial Literacy, Insurance, Loans, Mumbai, Tier 2, Tier 3, SIP" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About BachatVikas" />
-  <meta name="twitter:description" content="Smart savings. Secure future. Financial literacy, investments, and insurance—made simple and accessible." />
-  <meta name="twitter:image" content="https://bachatvikas.in/logo.png" />
-  <meta name="theme-color" content="#0f766e" />
 
-  <!-- Font to match home page (kept) -->
+  <meta name="theme-color" content="#0f766e" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS (inline only; no external CSS) -->
   <style>
     :root{
-      /* Brand palette */
-      --brand-green:#0f766e;  /* primary */
-      --brand-orange:#f59e0b; /* accent */
-      --brand-gold:#d4af37;   /* gold */
+      --brand-green:#0f766e;
+      --brand-orange:#f59e0b;
       --bg:#eaf7f2;
       --panel:#ffffff;
       --text:#1a202c;
@@ -49,322 +37,155 @@
     }
 
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;line-height:1.65}
+    body{
+      margin:0;
+      background:var(--bg);
+      font-family:Inter,system-ui,sans-serif;
+      color:var(--text);
+      line-height:1.65;
+    }
 
-    a{color:var(--brand-green);text-decoration:none}
-    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:auto;padding:28px}
 
-    .container{max-width:1100px;margin:0 auto;padding:28px}
-
-    /* Header */
     header{
-      background: linear-gradient(120deg,var(--brand-gold), var(--brand-orange), var(--brand-green));
-      border-radius: 24px;
-      padding: 44px 28px 28px;
-      box-shadow: var(--shadow);
-      position: relative;
+      background:linear-gradient(120deg,#e6f6f2,#d1fae5,#0f766e);
+      border-radius:24px;
+      padding:44px 28px 28px;
       color:#fff;
-      overflow:hidden;
+      box-shadow:var(--shadow);
     }
-    header::after{
-      content:""; position:absolute; right:-60px; top:-60px; width:180px; height:180px; border-radius:50%;
-      background: rgba(255,255,255,.35); filter: blur(6px);
-    }
-    .home-link{
-      position:absolute; left:20px; top:18px; display:inline-flex; align-items:center; gap:8px; color:#fff; font-weight:600;
-      padding:8px 10px; border-radius:999px; background: rgba(0,0,0,.1);
-      text-decoration:none;
-    }
-    .home-link svg{width:18px;height:18px;stroke:#fff}
-    .breadcrumbs{font-size:14px;color:rgba(255,255,255,.9);margin:0 0 8px 0}
-    h1{font-size:40px;margin:10px 0 6px;letter-spacing:-.02em}
-    .tagline{font-size:18px;color:#fff;font-weight:700;margin-bottom:6px;opacity:.95}
 
-    /* Sections */
-    section{margin-top:26px}
+    h1{font-size:40px;margin:10px 0 6px}
+    .tagline{font-size:18px;font-weight:700}
+
     .grid{display:grid;gap:22px}
-    @media(min-width:900px){
-      .grid-2{grid-template-columns:1.25fr .85fr}
-      .grid-3{grid-template-columns:repeat(3,1fr)}
-    }
-    @media(max-width:899.98px){
-      .grid-2,.grid-3{grid-template-columns:1fr}
-    }
+    @media(min-width:900px){.grid-2{grid-template-columns:1.25fr .85fr}}
 
-    /* Cards */
     .card{
-      background:var(--panel);
+      background:#fff;
       border:1px solid var(--border);
       border-radius:var(--radius);
-      box-shadow: var(--shadow);
       padding:24px;
-      transition:transform .2s ease, box-shadow .2s ease;
-    }
-    .card:hover{transform:translateY(-3px); box-shadow:0 14px 28px rgba(0,0,0,.10)}
-
-    h2{font-size:24px;margin:0 0 12px;color:var(--brand-green)}
-    h3{font-size:18px;margin:0 0 10px;color:#0f172a}
-
-    /* Pills */
-    .pill{
-      display:inline-block;padding:6px 12px;border-radius:999px;
-      background:linear-gradient(90deg, rgba(212,175,55,.18), rgba(245,158,11,.18), rgba(15,118,110,.18));
-      border:1px solid rgba(15,118,110,.25);
-      color:var(--brand-green);font-size:12px;font-weight:700;letter-spacing:.02em;margin-bottom:8px
+      box-shadow:var(--shadow);
     }
 
-    /* Lists */
-    ul{padding-left:18px;margin:0}
-    .why-list{list-style:none;padding-left:0}
-    .why-list li{position:relative;padding-left:28px;margin:6px 0}
-    .why-list li::before{
-      content:"✔"; position:absolute; left:0; top:0; color:var(--brand-orange); font-weight:900
-    }
+    h2{color:var(--brand-green);margin-bottom:12px}
+    h3{margin-bottom:10px}
 
-    /* CTA Button */
+    ul{padding-left:18px}
+    .why-list{list-style:none;padding:0}
+    .why-list li{padding-left:28px;position:relative;margin:6px 0}
+    .why-list li::before{content:"✔";position:absolute;left:0;color:var(--brand-orange)}
+
     .cta{
-      margin-top:18px; display:inline-block; padding:12px 18px;
-      background: linear-gradient(90deg,var(--brand-green),var(--brand-orange));
-      color:#fff; border-radius:12px; font-weight:700; box-shadow:0 10px 22px rgba(16,185,129,.25);
-      transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+      display:inline-block;
+      margin-top:18px;
+      padding:12px 18px;
+      background:linear-gradient(90deg,var(--brand-green),var(--brand-orange));
+      color:#fff;
+      border-radius:12px;
+      font-weight:700;
+      text-decoration:none;
     }
-    .cta:hover{transform:translateY(-2px); box-shadow:0 14px 28px rgba(16,185,129,.35); text-decoration:none}
 
-    /* Inline SVG icons */
-    .ico{display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; margin-right:8px;
-      border-radius:8px; background: rgba(15,118,110,.08); border:1px solid rgba(15,118,110,.12)}
-    .ico svg{width:18px;height:18px;stroke:var(--brand-green)}
-
-    /* Muted text */
     .muted{color:var(--muted)}
-    .brand-text{color:var(--brand-gold);font-weight:700}
-
-    /* Footer */
-    footer{margin:26px 0 8px; color:var(--muted); font-size:14px; text-align:center}
   </style>
-
-  <!-- Schema (kept, unchanged) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "BachatVikas",
-    "url": "https://bachatvikas.in",
-    "logo": "https://bachatvikas.in/logo.png",
-    "sameAs": [
-      "https://instagram.com/bachatvikas",
-      "https://facebook.com/bachatvikas"
-    ],
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "contactType": "Customer Support",
-      "email": "info@bachatvikas.in",
-      "telephone": "+91-9423420729",
-      "areaServed": "IN"
-    }]
-  }
-  </script>
-
-  <!-- Optional: Additional structured data (added without removing yours) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"About BachatVikas",
-    "url":"https://bachatvikas.in/about",
-    "description":"About BachatVikas – Smart savings. Secure future.",
-    "breadcrumb":{
-      "@type":"BreadcrumbList",
-      "itemListElement":[
-        {"@type":"ListItem","position":1,"name":"Home","item":"https://bachatvikas.in/"},
-        {"@type":"ListItem","position":2,"name":"About","item":"https://bachatvikas.in/about"}
-      ]
-    }
-  }
-  </script>
 </head>
+
 <body>
-  <div class="container">
-    <!-- HEADER (kept) -->
-    <header>
-      <!-- Home icon link (added) -->
-      <a class="home-link" href="/" aria-label="Go to Home">
-        <span class="ico" aria-hidden="true">
-          <!-- Home SVG -->
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 10.5l9-7 9 7" />
-            <path d="M9 21V12h6v9" />
-          </svg>
-        </span>
-        Home
-      </a>
+<div class="container">
 
-      <nav class="breadcrumbs">
-      <h1>About BachatVikas</h1>
-      <div class="tagline">Smart savings. Secure future.</div>
-    </header>
+<header>
+  <h1>About BachatVikas</h1>
+  <div class="tagline">Smart savings. Long-term security.</div>
+</header>
 
-    <!-- MAIN (ALL YOUR CONTENT KEPT) -->
-    <section class="grid grid-2">
-      <article class="card">
-        <h2>
-          <span class="ico" aria-hidden="true">
-            <!-- Building -->
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h6"/>
-            </svg>
-          </span>
-          Who we are
-        </h2>
-        <p>
-          BachatVikas is a mission-driven financial platform helping individuals and families make smarter money decisions.
-          We believe <em>“Where there’s saving, there’s growth.”</em>
-        </p>
+<section class="grid grid-2">
 
-        <h2>
-          <span class="ico" aria-hidden="true">
-            <!-- Target -->
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M22 2l-6 6"/>
-            </svg>
-          </span>
-          Our Mission
-        </h2>
-        <p>
-          To bridge the financial literacy gap across India by making investments, insurance, and long-term planning simple, transparent, and accessible for everyone.
-        </p>
+<article class="card">
+  <h2>Who we are</h2>
+  <p>
+    BachatVikas is a financial awareness and guidance platform built to help individuals
+    and families make informed money decisions with confidence.
+  </p>
+  <p>
+    We believe financial growth should be based on understanding, discipline,
+    and long-term thinking — not confusion, pressure, or shortcuts.
+  </p>
 
-        <div class="grid grid-3">
-          <div class="card" style="padding:16px;">
-            <div class="pill">Our Services</div>
-            <h3>
-              <span class="ico" aria-hidden="true">
-                <!-- Trending up -->
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 3v18h18"/><path d="M19 7l-7 7-3-3-4 4"/>
-                </svg>
-              </span>
-              Mutual Fund Distribution
-            </h3>
-            <ul>
-              <li>SIPs and lumpsum investments aligned to your goals</li>
-              <li>Asset allocation for growth & risk control</li>
-              <li>Paperless onboarding & portfolio tracking</li>
-            </ul>
-          </div>
-          <div class="card" style="padding:16px;">
-            <div class="pill">Our Services</div>
-            <h3>
-              <span class="ico" aria-hidden="true">
-                <!-- Shield-check -->
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2l7 4v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V6l7-4z"/><path d="M9 12l2 2 4-4"/>
-                </svg>
-              </span>
-              Insurance & Risk Planning
-            </h3>
-            <ul>
-              <li>Life, health, and crop insurance options</li>
-              <li>Needs-based cover, not product pushing</li>
-              <li>Claims support and policy reviews</li>
-            </ul>
-          </div>
-          <div class="card" style="padding:16px;">
-            <div class="pill">Our Services</div>
-            <h3>
-              <span class="ico" aria-hidden="true">
-                <!-- Book-open -->
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M20 22H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20z"/>
-                </svg>
-              </span>
-              Financial Literacy
-            </h3>
-            <ul>
-              <li>Online & on-ground workshops</li>
-              <li>Simple explainers in local languages</li>
-              <li>Tools & guides to build good habits</li>
-            </ul>
-          </div>
-        </div>
+  <h2>Our Mission</h2>
+  <p>
+    Our mission is to bridge the financial literacy gap in India by simplifying
+    investments, insurance, and long-term financial planning.
+  </p>
+  <p>
+    We focus on education first, so people can understand their choices clearly
+    before taking any financial decision.
+  </p>
 
-        <h2>
-          <span class="ico" aria-hidden="true">
-            <!-- Thumbs-up -->
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9A2 2 0 0 0 19.7 9H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
-            </svg>
-          </span>
-          Why choose us
-        </h2>
-        <ul class="why-list">
-          <li><strong>Simple & transparent:</strong> Clear recommendations, no jargon.</li>
-          <li><strong>Goal-first planning:</strong> Child education, home, retirement, protection.</li>
-          <li><strong>Local focus:</strong> Designed for emerging India.</li>
-          <li><strong class="brand-text">SEBI Registered Mutual Fund Distributor:</strong> Credible financial advisory services.</li>
-        </ul>
+  <h2>What we do</h2>
 
-        <a href="/contact" class="cta">Talk to an advisor</a>
-      </article>
+  <h3>Mutual Fund Distribution</h3>
+  <ul>
+    <li>Goal-based SIP and long-term investment planning</li>
+    <li>Asset allocation aligned to risk comfort and time horizon</li>
+    <li>Paperless onboarding with transparent portfolio tracking</li>
+  </ul>
 
-      <aside class="card">
-        <h2>
-          <span class="ico" aria-hidden="true">
-            <!-- Info -->
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
-            </svg>
-          </span>
-          Fast Facts
-        </h2>
-        <ul>
-          <li><strong>Brand:</strong> BachatVikas</li>
-          <li><strong>Tagline:</strong> Smart savings. Secure future.</li>
-          <li><strong>Focus:</strong> <span class="brand-text">Empowering individuals and families with expert financial guidance for long-term growth.</span></li>
-        </ul>
+  <h3>Insurance & Risk Planning</h3>
+  <ul>
+    <li>Life, health, motor, and crop insurance solutions</li>
+    <li>Protection-focused planning based on real needs</li>
+    <li>Policy review and claims-related support</li>
+  </ul>
 
-        <h2>
-          <span class="ico" aria-hidden="true">
-            <!-- Phone -->
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.11 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.31 1.77.57 2.61a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.47-1.14a2 2 0 0 1 2.11-.45c.84.26 1.71.45 2.61.57A2 2 0 0 1 22 16.92z"/>
-            </svg>
-          </span>
-          Contact
-        </h2>
-        <p>
-          Email: <a href="mailto:info@bachatvikas.in">info@bachatvikas.in</a><br />
-          Phone: <a href="tel:+91-9423420729">+91-9423420729</a><br />
-        </p>
+  <h3>Financial Literacy</h3>
+  <ul>
+    <li>Practical financial education workshops</li>
+    <li>Simple explainers in easy-to-understand language</li>
+    <li>Tools and guidance to build responsible money habits</li>
+  </ul>
 
-        <h2>
-          <span class="ico" aria-hidden="true">
-            <!-- Share -->
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98"/><path d="M15.41 6.51L8.59 10.49"/>
-            </svg>
-          </span>
-          Social
-        </h2>
-        <p>
-          <a href="https://instagram.com/bachatvikas" rel="noopener">Instagram</a> ·
-          <a href="https://facebook.com/bachatvikas" rel="noopener">Facebook</a>
-        </p>
+  <h2>Why choose us</h2>
+  <ul class="why-list">
+    <li><strong>Education-first approach:</strong> Understanding before action.</li>
+    <li><strong>Transparent guidance:</strong> No hidden agendas or pressure.</li>
+    <li><strong>Long-term focus:</strong> Stability over short-term excitement.</li>
+    <li><strong>SEBI Registered Mutual Fund Distributor:</strong> Operating with regulatory discipline.</li>
+  </ul>
 
-        <p class="muted" style="margin-top:14px; font-size:12px;">
-          Disclaimer: Investments are subject to market risks. Please read all scheme-related documents carefully before investing. BachatVikas is a SEBI registered mutual fund distributor.
-        </p>
-      </aside>
-    </section>
+  <a href="/contact" class="cta">Talk to an advisor</a>
+</article>
 
-    <footer>
-      © <span id="year"></span> BachatVikas. All rights reserved. · <a href="/privacy">Privacy Policy</a>
-      <!-- Note: Original instruction text from your message was moved to this HTML comment to avoid showing it on the live page. -->
-    </footer>
-  </div>
+<aside class="card">
+  <h2>Fast Facts</h2>
+  <ul>
+    <li><strong>Brand:</strong> BachatVikas</li>
+    <li><strong>Tagline:</strong> Smart savings. Long-term security.</li>
+    <li>
+      <strong>Focus:</strong>
+      Helping individuals and families make informed financial decisions
+      through education and guidance.
+    </li>
+  </ul>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <p class="muted" style="font-size:12px;margin-top:14px">
+    Disclaimer: Investments are subject to market risks. Please read all scheme-related
+    documents carefully. BachatVikas focuses on financial education and distribution
+    through trusted partners.
+  </p>
+</aside>
+
+</section>
+
+<footer class="muted" style="text-align:center;margin-top:26px">
+  © <span id="year"></span> BachatVikas · <a href="/privacy">Privacy Policy</a>
+</footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
