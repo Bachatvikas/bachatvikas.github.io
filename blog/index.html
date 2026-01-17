@@ -2,42 +2,178 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BachatVikas Blog | Financial Insights</title>
-  <link rel="stylesheet" href="../style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>BachatVikas Blog | Financial Education & Insights</title>
+  <meta name="description" content="Read educational blogs on saving, investing, mutual funds, and financial literacy by BachatVikas." />
+
   <style>
-    body {font-family: 'Segoe UI', Arial, sans-serif; background:#f5f5f5; color:#222; margin:0;}
-    header {background:#004aad; color:#fff; padding:2rem 1rem; text-align:center;}
-    main {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; padding:2rem;}
-    article {background:#fff; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1); padding:1.5rem; transition:transform .2s;}
-    article:hover {transform:translateY(-5px);}
-    article h2 a {color:#004aad; text-decoration:none;}
-    article h2 a:hover {text-decoration:underline;}
-    footer {text-align:center; padding:1rem; font-size:0.9rem; background:#eee;}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background:#eaf7f2;
+      color:#1a202c;
+    }
+
+    /* HEADER */
+    header{
+      background:#0f766e;
+      color:#ffffff;
+      padding:18px 16px;
+      text-align:center;
+    }
+
+    header h1{
+      margin:0;
+      font-size:1.6rem;
+    }
+
+    header p{
+      margin:6px 0 0;
+      font-size:0.9rem;
+      opacity:0.95;
+    }
+
+    nav{
+      margin-top:10px;
+    }
+
+    nav a{
+      color:#ffffff;
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.9rem;
+    }
+
+    /* MAIN GRID */
+    main{
+      max-width:1100px;
+      margin:auto;
+      padding:20px 14px 40px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:16px;
+    }
+
+    article{
+      background:#ffffff;
+      border-radius:14px;
+      padding:18px;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    article:hover{
+      transform:translateY(-4px);
+      box-shadow:0 10px 24px rgba(0,0,0,.12);
+    }
+
+    article h2{
+      font-size:1.05rem;
+      margin:0 0 6px;
+    }
+
+    article h2 a{
+      color:#0f766e;
+      text-decoration:none;
+    }
+
+    article h2 a:hover{
+      text-decoration:underline;
+    }
+
+    .date{
+      font-size:0.75rem;
+      color:#64748b;
+      margin-bottom:8px;
+    }
+
+    article p{
+      font-size:0.9rem;
+      line-height:1.5;
+      margin:0;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#ffffff;
+      border-top:1px solid #d1fae5;
+      text-align:center;
+      padding:16px 12px;
+      font-size:0.8rem;
+      color:#475569;
+    }
+
+    footer a{
+      color:#0f766e;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    footer a:hover{
+      text-decoration:underline;
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>BachatVikas Blog</h1>
-    <p>Financial News, Tips & Investment Insights</p>
-  </header>
 
-  <main>
-    <article>
-      <h2><a href="post1.html">5 Smart Money Habits for Young Investors</a></h2>
-      <p><small>October 25, 2025</small></p>
-      <p>Start your investing journey the right way with habits that build long-term wealth and discipline.</p>
-    </article>
+<header>
+  <h1>BachatVikas Blog</h1>
+  <p>Financial Education, Saving & Investing Awareness</p>
+  <nav>
+    <a href="/index.html">← Back to Home</a>
+  </nav>
+</header>
 
-    <article>
-      <h2><a href="post2.html">Top Mutual Fund Picks for 2025</a></h2>
-      <p><small>October 20, 2025</small></p>
-      <p>Explore expert-curated mutual fund categories that can help diversify your portfolio this year.</p>
-    </article>
-  </main>
+<main>
 
-  <footer>
-    © 2025 BachatVikas | All Rights Reserved
-  </footer>
+  <article>
+    <h2>
+      <a href="sip-how-it-works.html">
+        What Is SIP and How It Works for Long-Term Wealth
+      </a>
+    </h2>
+    <div class="date">January 10, 2026</div>
+    <p>
+      Understand what SIP is, how it works, and why it is one of the simplest ways
+      to build long-term wealth with discipline.
+    </p>
+  </article>
+
+  <article>
+    <h2>
+      <a href="saving-vs-investing.html">
+        Saving vs Investing: What’s the Real Difference?
+      </a>
+    </h2>
+    <div class="date">January 12, 2026</div>
+    <p>
+      Learn the difference between saving and investing, and why both are important
+      for financial stability and growth.
+    </p>
+  </article>
+
+  <article>
+    <h2>
+      <a href="financial-literacy-vs-income.html">
+        Why Financial Literacy Matters More Than Income
+      </a>
+    </h2>
+    <div class="date">January 15, 2026</div>
+    <p>
+      Discover why understanding money basics is more powerful than earning more,
+      especially for long-term financial peace.
+    </p>
+  </article>
+
+</main>
+
+<footer>
+  © 2026 BachatVikas ·
+  <a href="/privacy.html">Privacy Policy</a> ·
+  <a href="/terms.html">Terms & Conditions</a>
+</footer>
+
 </body>
 </html>
