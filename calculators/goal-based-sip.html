@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Goal-Based SIP Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+  <h2>Goal-Based SIP Planner</h2>
+  <p class="subtitle">Plan SIP to achieve life goals</p>
+
+  <label>Target Amount (₹)</label>
+  <input id="goalAmount" type="number" placeholder="2000000">
+
+  <label>Time Horizon (Years)</label>
+  <input id="goalYears" type="number" placeholder="15">
+
+  <label>Expected Annual Return (%)</label>
+  <input id="goalRate" type="number" placeholder="12">
+
+  <button onclick="calculateGoalSIP()">Calculate Required SIP</button>
+
+  <div id="goalResult" class="result hidden"></div>
+</div>
+
+<script src="common.js"></script>
+</body>
+</html>
