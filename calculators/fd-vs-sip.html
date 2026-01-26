@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FD vs SIP Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+  <h2>FD vs SIP Comparison</h2>
+  <p class="subtitle">Compare safe vs growth-oriented investing</p>
+
+  <label>Investment Amount (₹)</label>
+  <input id="invAmount" type="number" placeholder="100000">
+
+  <label>Time Period (Years)</label>
+  <input id="invYears" type="number" placeholder="10">
+
+  <label>FD Rate (%)</label>
+  <input id="fdRate" type="number" value="6.5">
+
+  <label>SIP Return (%)</label>
+  <input id="sipReturn" type="number" value="12">
+
+  <button onclick="compareFDvsSIP()">Compare Investments</button>
+
+  <div id="compareResult" class="result hidden"></div>
+</div>
+
+<script src="common.js"></script>
+</body>
+</html>
