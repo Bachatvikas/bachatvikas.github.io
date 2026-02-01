@@ -1,174 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="UTF-8">
+<title>Financial Calculators | BachatVikas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>BachatVikas – Financial Calculators (SIP, EMI, FD, Goal Planning)</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Use BachatVikas financial calculators: SIP (inflation adjusted), EMI, FD vs SIP, and Goal-based SIP planning. Free, simple, and educational tools." />
-  <meta name="keywords" content="SIP calculator, EMI calculator, FD vs SIP, Goal SIP calculator, inflation adjusted SIP" />
-  <meta name="author" content="BachatVikas" />
-  <link rel="canonical" href="https://www.bachatvikas.in/calculator.html" />
-
-  <style>
-    :root{
-      --light-blue:#eaf9ff;
-      --deep-blue:#0b72b9;
-      --green:#10b981;
-      --gold:#d4af37;
-      --ink:#0f172a;
-      --muted:#6b7280;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter,Arial,Helvetica,sans-serif;
-      background:var(--light-blue);
-      color:var(--ink);
-    }
-    header{
-      background:linear-gradient(90deg,#86d8ff,#0b72b9);
-      padding:14px 10px;
-      color:#fff;
-      position:sticky;
-      top:0;
-      z-index:20;
-      box-shadow:0 4px 18px rgba(11,114,185,.12)
-    }
-    .wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:0 16px
-    }
-    header .top{
-      display:flex;
-      align-items:center;
-      gap:12px
-    }
-    header a.home{
-      color:#fff;
-      text-decoration:none;
-      font-weight:700;
-      display:flex;
-      align-items:center;
-      gap:8px
-    }
-    header h1{
-      margin:0 auto 0 6px;
-      font-size:22px;
-      font-weight:800
-    }
-    header p{
-      margin:6px 0 0 0;
-      color:rgba(255,255,255,.9);
-      font-size:13px
-    }
-
-    .icon-grid{
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-      justify-content:center;
-      margin:30px auto
-    }
-    .icon-card{
-      width:220px;
-      background:#fff;
-      border-radius:12px;
-      padding:18px;
-      text-align:center;
-      cursor:pointer;
-      border:1px solid rgba(11,114,185,.06);
-      box-shadow:0 10px 24px rgba(2,6,23,.06);
-      transition:transform .18s,box-shadow .18s;
-      text-decoration:none;
-      color:inherit;
-    }
-    .icon-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 18px 30px rgba(2,6,23,.08)
-    }
-    .icon-card .emoji{
-      font-size:36px;
-      margin-bottom:8px;
-      color:var(--gold)
-    }
-    .icon-card h3{
-      margin:0;
-      color:var(--deep-blue);
-      font-size:16px
-    }
-    .hint{
-      max-width:1100px;
-      margin:14px auto;
-      color:var(--muted);
-      text-align:center;
-      font-size:14px
-    }
-
-    footer{
-      max-width:900px;
-      margin:30px auto;
-      text-align:center;
-      font-size:12px;
-      color:#6b7280;
-      padding:0 16px;
-    }
-
-    @media (max-width:720px){
-      .icon-card{width:45%}
-    }
-    @media (max-width:420px){
-      .icon-card{width:90%}
-    }
-  </style>
+<style>
+:root{
+  --primary:#2563eb;
+  --accent:#16a34a;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto;
+  background:var(--bg);
+  color:var(--text);
+}
+header{
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+  color:#fff;
+  padding:16px;
+  text-align:center;
+}
+header h1{margin:0;font-size:22px}
+.container{
+  max-width:420px;
+  margin:auto;
+  padding:16px;
+}
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  margin-bottom:18px;
+}
+h2{margin:0 0 12px;font-size:18px}
+label{font-size:13px;color:var(--muted)}
+input{
+  width:100%;
+  padding:10px;
+  margin:6px 0 12px;
+  border-radius:10px;
+  border:1px solid #e2e8f0;
+  font-size:15px;
+}
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:var(--primary);
+  color:#fff;
+  font-weight:700;
+  font-size:15px;
+}
+button.secondary{
+  background:#e5e7eb;
+  color:#111;
+  margin-top:10px;
+}
+.result{
+  margin-top:12px;
+  padding:12px;
+  background:#f1f5f9;
+  border-radius:10px;
+  font-size:14px;
+}
+.menu button{
+  margin-bottom:12px;
+  background:var(--accent);
+}
+.hidden{display:none}
+footer{
+  font-size:12px;
+  color:var(--muted);
+  text-align:center;
+  margin-top:20px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="wrap">
-    <div class="top">
-      <a class="home" href="/"><span style="font-size:20px">🏠</span><span>Home</span></a>
-      <h1>BachatVikas Financial Calculators</h1>
-    </div>
-    <p>Simple tools • Real-world planning • Inflation-aware insights</p>
-  </div>
+  <h1>BachatVikas Calculators</h1>
 </header>
 
-<div class="hint">
-  Choose a calculator below. All tools are free, educational, and work without registration.
+<div class="container">
+
+<!-- MENU -->
+<div id="menu" class="card menu">
+  <h2>Select Calculator</h2>
+  <button onclick="openCalc('sip')">📈 SIP Calculator</button>
+  <button onclick="openCalc('emi')">🏠 EMI Calculator</button>
+  <button onclick="openCalc('fd')">🏦 FD Calculator</button>
 </div>
 
-<div class="icon-grid wrap">
+<!-- SIP -->
+<div id="sip" class="card hidden">
+  <h2>SIP Calculator</h2>
+  <label>Monthly Investment (₹)</label>
+  <input id="sipAmt" type="number">
+  <label>Expected Return (%)</label>
+  <input id="sipRate" type="number">
+  <label>Inflation (%)</label>
+  <input id="sipInfl" type="number">
+  <label>Years</label>
+  <input id="sipYears" type="number">
+  <button onclick="calcSIP()">Calculate</button>
+  <div id="sipRes" class="result"></div>
+  <button class="secondary" onclick="goHome()">🏠 Home</button>
+</div>
 
-  <a class="icon-card" href="/calculators/sip-calculator.html">
-    <div class="emoji">📈</div>
-    <h3>SIP Calculator<br><small>(Inflation Adjusted)</small></h3>
-  </a>
+<!-- EMI -->
+<div id="emi" class="card hidden">
+  <h2>EMI Calculator</h2>
+  <label>Loan Amount (₹)</label>
+  <input id="emiAmt" type="number">
+  <label>Interest Rate (%)</label>
+  <input id="emiRate" type="number">
+  <label>Years</label>
+  <input id="emiYears" type="number">
+  <button onclick="calcEMI()">Calculate</button>
+  <div id="emiRes" class="result"></div>
+  <button class="secondary" onclick="goHome()">🏠 Home</button>
+</div>
 
-  <a class="icon-card" href="/calculators/emi-calculator.html">
-    <div class="emoji">🏠</div>
-    <h3>EMI Calculator</h3>
-  </a>
-
-  <a class="icon-card" href="/calculators/fd-vs-sip.html">
-    <div class="emoji">🏦</div>
-    <h3>FD vs SIP</h3>
-  </a>
-
-  <a class="icon-card" href="/calculators/goal-based-sip.html">
-    <div class="emoji">🎯</div>
-    <h3>Goal-Based SIP</h3>
-  </a>
-
+<!-- FD -->
+<div id="fd" class="card hidden">
+  <h2>FD Calculator</h2>
+  <label>Deposit Amount (₹)</label>
+  <input id="fdAmt" type="number">
+  <label>Interest Rate (%)</label>
+  <input id="fdRate" type="number">
+  <label>Years</label>
+  <input id="fdYears" type="number">
+  <button onclick="calcFD()">Calculate</button>
+  <div id="fdRes" class="result"></div>
+  <button class="secondary" onclick="goHome()">🏠 Home</button>
 </div>
 
 <footer>
-  Disclaimer: These calculators are for educational purposes only and do not constitute investment advice.
+  Disclaimer: For education only. Not investment advice.
 </footer>
+
+</div>
+
+<script>
+function openCalc(id){
+  document.querySelectorAll('.card').forEach(c=>c.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+}
+function goHome(){
+  document.querySelectorAll('.card').forEach(c=>c.classList.add('hidden'));
+  document.getElementById('menu').classList.remove('hidden');
+}
+function calcSIP(){
+  let P=+sipAmt.value,r=+sipRate.value/100/12,y=+sipYears.value,n=y*12;
+  let fv=P*((Math.pow(1+r,n)-1)/r)*(1+r);
+  sipRes.innerHTML=`Future Value: ₹${fv.toFixed(0)}`;
+}
+function calcEMI(){
+  let P=+emiAmt.value,r=+emiRate.value/100/12,n=+emiYears.value*12;
+  let emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  emiRes.innerHTML=`Monthly EMI: ₹${emi.toFixed(0)}`;
+}
+function calcFD(){
+  let A=+fdAmt.value*Math.pow(1+fdRate.value/100,fdYears.value);
+  fdRes.innerHTML=`Maturity Amount: ₹${A.toFixed(0)}`;
+}
+</script>
 
 </body>
 </html>
