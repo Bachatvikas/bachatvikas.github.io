@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EMI Calculator | BachatVikas</title>
+  <meta name="description" content="Calculate loan EMI, total interest and repayment using BachatVikas EMI Calculator." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="card">
+  <h2>EMI Calculator</h2>
+  <p class="subtitle">Check your monthly loan burden</p>
+
+  <label>Loan Amount (₹)</label>
+  <input id="loanAmount" type="number" placeholder="e.g. 10,00,000" />
+
+  <label>Annual Interest Rate (%)</label>
+  <input id="loanRate" type="number" placeholder="e.g. 9" />
+
+  <label>Loan Tenure (Years)</label>
+  <input id="loanYears" type="number" placeholder="e.g. 10" />
+
+  <button onclick="calculateEMI()">Calculate EMI</button>
+
+  <div id="emiResult" class="result hidden"></div>
+</div>
+
+<p style="font-size:12px;opacity:0.7;margin-top:16px">
+  Disclaimer: These calculations are for educational purposes only and do not constitute investment advice.
+</p>
+
+<script src="common.js"></script>
+</body>
+</html>
