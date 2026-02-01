@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Financial Calculators | BachatVikas</title>
+<title>BachatVikas Calculators</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -24,10 +24,20 @@ body{
 header{
   background:linear-gradient(135deg,#2563eb,#1e40af);
   color:#fff;
-  padding:16px;
-  text-align:center;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
-header h1{margin:0;font-size:22px}
+header a{
+  color:#fff;
+  text-decoration:none;
+  font-size:20px;
+}
+header h1{
+  font-size:18px;
+  margin:0;
+}
 .container{
   max-width:420px;
   margin:auto;
@@ -40,9 +50,9 @@ header h1{margin:0;font-size:22px}
   box-shadow:0 10px 30px rgba(0,0,0,.08);
   margin-bottom:18px;
 }
-h2{margin:0 0 12px;font-size:18px}
+h2{margin:0 0 12px;font-size:17px}
 label{font-size:13px;color:var(--muted)}
-input{
+input,select{
   width:100%;
   padding:10px;
   margin:6px 0 12px;
@@ -65,16 +75,16 @@ button.secondary{
   color:#111;
   margin-top:10px;
 }
+.menu button{
+  margin-bottom:12px;
+  background:var(--accent);
+}
 .result{
   margin-top:12px;
   padding:12px;
   background:#f1f5f9;
   border-radius:10px;
   font-size:14px;
-}
-.menu button{
-  margin-bottom:12px;
-  background:var(--accent);
 }
 .hidden{display:none}
 footer{
@@ -89,6 +99,7 @@ footer{
 <body>
 
 <header>
+  <a href="/" title="Home">🏠</a>
   <h1>BachatVikas Calculators</h1>
 </header>
 
@@ -100,6 +111,7 @@ footer{
   <button onclick="openCalc('sip')">📈 SIP Calculator</button>
   <button onclick="openCalc('emi')">🏠 EMI Calculator</button>
   <button onclick="openCalc('fd')">🏦 FD Calculator</button>
+  <button onclick="openCalc('goal')">🎯 Goal-Based SIP</button>
 </div>
 
 <!-- SIP -->
@@ -109,13 +121,11 @@ footer{
   <input id="sipAmt" type="number">
   <label>Expected Return (%)</label>
   <input id="sipRate" type="number">
-  <label>Inflation (%)</label>
-  <input id="sipInfl" type="number">
-  <label>Years</label>
+  <label>Investment Years</label>
   <input id="sipYears" type="number">
   <button onclick="calcSIP()">Calculate</button>
   <div id="sipRes" class="result"></div>
-  <button class="secondary" onclick="goHome()">🏠 Home</button>
+  <button class="secondary" onclick="goHome()">⬅ Back</button>
 </div>
 
 <!-- EMI -->
@@ -125,11 +135,11 @@ footer{
   <input id="emiAmt" type="number">
   <label>Interest Rate (%)</label>
   <input id="emiRate" type="number">
-  <label>Years</label>
+  <label>Loan Years</label>
   <input id="emiYears" type="number">
   <button onclick="calcEMI()">Calculate</button>
   <div id="emiRes" class="result"></div>
-  <button class="secondary" onclick="goHome()">🏠 Home</button>
+  <button class="secondary" onclick="goHome()">⬅ Back</button>
 </div>
 
 <!-- FD -->
@@ -143,7 +153,28 @@ footer{
   <input id="fdYears" type="number">
   <button onclick="calcFD()">Calculate</button>
   <div id="fdRes" class="result"></div>
-  <button class="secondary" onclick="goHome()">🏠 Home</button>
+  <button class="secondary" onclick="goHome()">⬅ Back</button>
+</div>
+
+<!-- GOAL BASED SIP -->
+<div id="goal" class="card hidden">
+  <h2>Goal-Based SIP</h2>
+  <label>Select Goal</label>
+  <select id="goalType">
+    <option>Child Education</option>
+    <option>Retirement</option>
+    <option>House Purchase</option>
+    <option>Car</option>
+  </select>
+  <label>Target Amount (₹)</label>
+  <input id="goalAmount" type="number">
+  <label>Years to Goal</label>
+  <input id="goalYears" type="number">
+  <label>Expected Return (%)</label>
+  <input id="goalRate" type="number">
+  <button onclick="calcGoal()">Calculate SIP</button>
+  <div id="goalRes" class="result"></div>
+  <button class="secondary" onclick="goHome()">⬅ Back</button>
 </div>
 
 <footer>
@@ -162,18 +193,23 @@ function goHome(){
   document.getElementById('menu').classList.remove('hidden');
 }
 function calcSIP(){
-  let P=+sipAmt.value,r=+sipRate.value/100/12,y=+sipYears.value,n=y*12;
+  let P=+sipAmt.value,r=+sipRate.value/100/12,n=sipYears.value*12;
   let fv=P*((Math.pow(1+r,n)-1)/r)*(1+r);
   sipRes.innerHTML=`Future Value: ₹${fv.toFixed(0)}`;
 }
 function calcEMI(){
-  let P=+emiAmt.value,r=+emiRate.value/100/12,n=+emiYears.value*12;
+  let P=+emiAmt.value,r=+emiRate.value/100/12,n=emiYears.value*12;
   let emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
   emiRes.innerHTML=`Monthly EMI: ₹${emi.toFixed(0)}`;
 }
 function calcFD(){
   let A=+fdAmt.value*Math.pow(1+fdRate.value/100,fdYears.value);
   fdRes.innerHTML=`Maturity Amount: ₹${A.toFixed(0)}`;
+}
+function calcGoal(){
+  let T=+goalAmount.value,r=+goalRate.value/100/12,n=goalYears.value*12;
+  let sip=T*r/(Math.pow(1+r,n)-1);
+  goalRes.innerHTML=`Required Monthly SIP: ₹${sip.toFixed(0)}`;
 }
 </script>
 
